@@ -1,0 +1,385 @@
+$(function() {  
+// 	$('.generate').hide();
+// 	$('.reset-game').hide();
+// 	$('.character').hide()
+	
+// 	var theKnight = kanir.create();
+// 	var theWizard = devaio.create();
+// 	var theRogue = shadow.create();
+// // 				-----------DOM Variables---------------
+	
+// 	var placeArea = $('.placement');
+// 	var characterDisplay = $('.character-display');
+	
+// 	var monsterDisplay = $('.encounter-string');
+// 	var buttonLayout = $('.button-layout');
+
+// // 			----------------DOM FUNCTIONS---------------
+	
+// 	var characterSelect = function () {
+// 		$('.start-game').hide();
+// 		$('.btn-kanir').show();
+// 		$('.btn-devaio').show();
+// 		$('.btn-shadow').show();
+
+// 	};
+
+// 	var startGame = function () {
+// 		characterSelect();
+// 		$('.start-game').hide();
+// 	};
+// 	var characterInfo = function (currentCharacter) {
+// 			characterDisplay.append(
+// 			currentCharacter.name+"<br>",
+// 			"Character Job: "+currentCharacter.job.name+"<br>",
+// 			"Job Ability: "+currentCharacter.job.ability.name+"<br>",
+// 			"Current Health: "+currentCharacter.job.health)
+// 			$('.character-display').css({ 
+// 				'padding-top': '1%',
+//   				'padding-bottom': '1%'
+//   			})
+// 	};
+// 	var monsterInfo = function (currentMonster) {
+// 		monsterDisplay.empty();
+// 		monsterDisplay.append(
+// 			currentMonster.name+"<br>",
+// 			"Max Trivia Diificulty: "+currentMonster.difficulty+"<br>",
+// 			"Monster Rank: "+currentMonster.rank.name+"<br>",
+// 			"Health: "+currentMonster.health
+// 			);
+// 		$('.encounter-string').css({ 
+// 				'padding-top': '1%',
+//   				'padding-bottom': '1%'
+//   			})
+// 	};
+// 	var characterChoice = function () {
+// 		$('.character').hide();
+// 		$('.generate').show();
+// 		$('.reset-game').show();
+// 	}
+	
+// 	var updateHealth = function () {
+// 		monsterDisplay.empty();
+// 		characterDisplay.empty();
+// 		monsterInfo(currentMonster);
+// 		characterInfo(currentCharacter);
+// 	}
+	
+// 	// the function to generate a new encounter
+// 	var pickAMonster = function () {	
+// 		currentThreat = firstLevel[0];			
+// 			 if (currentThreat.health <= 0) 
+// 				{
+// 				firstLevel.shift();
+// 				}
+// 			if (firstLevel.length <=0) 
+// 				{
+// 					endGameCheck();
+// 				}	
+// 		currentThreat = firstLevel[0];
+			
+// 		currentMonster = currentThreat;
+			
+// 		return currentMonster;
+// 	};
+	
+// 	// Checks to see if the pool of monsters is empty, and if so, displays a 
+// 	// victory message and resets the game after 5 seconds
+// 	var endGameCheck = function () {
+// 		if(firstLevel.length <= 0){
+// 				placeArea.empty();
+// 				placeArea.append("<p class='play-area end-game'>You Have Beat The Game! Prepare Yourself...</p>");
+// 				_.delay(resetGame,5000);
+// 		};
+// 	};
+// 	// Function to generate questions from the current monster
+// 	var startEncounter = function (){
+// 		// Choose a question from that monsters pool
+// 		var activeEncounter = currentMonster.encounterGenerator();
+	
+// 		// Of the question choosen, randomizes the answer choices
+// 		var possibleChoices = activeEncounter.choiceRandomizer();
+	
+// 		// Constructs the answers into objects
+// 		var displayChoices = new Answers(possibleChoices);
+
+// 		placeArea.empty();
+		
+// 		placeArea.append(
+// 			"You are being questioned by a ", 
+// 			currentMonster.create(),
+// 			activeEncounter.create(),
+// 			displayChoices.create1(),
+// 			displayChoices.create2(),
+// 			displayChoices.create3(),
+// 			displayChoices.create4()
+// 		);
+// 	$('.question-area').css({ 
+// 				'padding-top': '2%',
+//   				'padding-bottom': '4%'
+//   			})
+// 		monsterInfo(currentMonster);
+// 		answerAddClass();
+// 	};
+// 	// Function that picks a monster and if a valid monster is available, generates questions
+// 	// based on that monster's stats
+// 	var postAnEncounter = function() {
+// 		var validMonster = pickAMonster();
+// 		if(validMonster != undefined){
+// 		startEncounter();
+// 		};
+// 	};
+
+// 	// THIS VERSION WORKS AND IS STABLE
+// 	// var postAnEncounter = function () {
+// 	// 	// On click, randomly selects a monster from the pool of monsters given
+// 	// 	// currentMonster = availableMonsters(firstLevel),
+		
+		
+// 	// 		currentThreat = firstLevel[0];
+// 	// 		if (currentThreat.health === 0) {
+// 	// 		firstLevel.shift();
+// 	// 		};
+// 	// 		currentThreat = firstLevel[0];
+// 	// 		if(currentThreat === undefined){
+// 	// 			placeArea.empty();
+// 	// 			placeArea.append("You Have Passed This Level!");
+// 	// 		}
+// 	// 		console.log(currentThreat);
+// 	// 		currentMonster = currentThreat;
+	
+		
+// 	// 	// Choose a question from that monsters pool
+// 	// 	var activeEncounter = currentMonster.encounterGenerator();
+	
+// 	// 	// Of the question choosen, randomizes the answer choices
+// 	// 	var possibleChoices = activeEncounter.choiceRandomizer();
+	
+// 	// 	// Constructs the answers into objects
+// 	// 	var displayChoices = new Answers(possibleChoices);
+
+// 	// 	placeArea.empty();
+		
+// 	// 	placeArea.append(
+// 	// 		"You are being questioned by a ", 
+// 	// 		currentMonster.create(),
+// 	// 		activeEncounter.create(),
+// 	// 		displayChoices.create1(),
+// 	// 		displayChoices.create2(),
+// 	// 		displayChoices.create3(),
+// 	// 		displayChoices.create4()
+// 	// 	);
+// 	// 	monsterInfo(currentMonster);
+// 	// 	answerAddClass();
+// 	// };
+
+
+// 	// Displays a new question when run that keeps the current monster in the match
+// 	// and updates the monsters health as the turns resolve. If the monster is at 0 health
+// 	// it displays a congratulations message and moves to the next monster in the pool
+// 	var generateQuestions = function () {
+// 		var activeEncounter = currentMonster.encounterGenerator();
+	
+// 		// Of the question choosen, randomizes the answer choices
+// 		var possibleChoices = activeEncounter.choiceRandomizer();
+	
+// 		// Constructs the answers into objects
+// 		var displayChoices = new Answers(possibleChoices);
+
+// 			placeArea.empty();
+// 			placeArea.append(
+// 					"You are still being attacked by a ",
+// 					currentMonster.create(),
+// 					activeEncounter.create(),
+// 					displayChoices.create1(),
+// 					displayChoices.create2(),
+// 					displayChoices.create3(),
+// 					displayChoices.create4()
+// 				);
+// 			updateHealth();
+// 			if (currentMonster.health <= 0) {
+// 				placeArea.empty();
+// 				placeArea.append("<p class='play-area victory'>You Are Victorious! Loading the Next Encounter...</p>");
+// 				_.delay(postAnEncounter,2000);
+// 			};
+// 			if (currentCharacter.job.health <= 0) {
+// 				placeArea.empty();
+// 				placeArea.append("<p class='play-area defeat'>You Have Been DEFEATED! Read Up On Your Trivia And Try Again!</p>");
+// 				_.delay(resetGame,5000);
+// 			}
+// 			answerAddClass();
+// 			$('.question-area').css({ 
+// 				'padding-top': '2%',
+//   				'padding-bottom': '4%'
+//   			})
+// 	};
+
+// 	// adds class to answers and automatically creates a new encounter after 3 seconds
+// 	var answerAddClass = function () {
+// 		$('.answer-btn[data-answer="true"]').addClass('correct');
+// 		$('.answer-btn[data-answer="false"]').addClass('wrong');
+// 	};
+// 	// Resets the game and activates hard mode
+// 	var resetGame = function () {
+// 		characterDisplay.empty();
+// 		monsterDisplay.empty();
+// 		placeArea.empty();
+// 		$('.question-area').css({ 
+// 				'padding-top': '0%',
+//   				'padding-bottom': '0%'
+//   			})
+// 		$('.character-display').css({ 
+// 				'padding-top': '0%',
+//   				'padding-bottom': '0%'
+//   			})
+// 		$('.encounter-string').css({ 
+// 				'padding-top': '0%',
+//   				'padding-bottom': '0%'
+//   			})
+// 		knight.health = 10;
+// 		rogue.health = 8;
+// 		wizard.health = 6;
+// 	goblin.health = 2;
+// 	troll.health = 5;
+// 	ogre.health = 7;
+// 		firstLevel=[troll,goblin,ogre];
+
+// 		$('.generate').hide();
+// 		$('.reset-game').hide();
+// 		$('.start-game').show();
+// 	};
+// 	var highlightCorrect = function () {
+// 		$(this).css({
+// 				'border-color':'red',
+// 				'border-width': '5px'
+// 				});
+// 			$('.wrong').css({
+// 				'border-color':'blue',
+// 				'border-width': '5px',
+// 				'opacity': '0.5'
+// 			});
+// 		};
+// 	var highlightWrong = function () {
+// 			$('.correct').css({
+// 				'border-color':'orange',
+// 				'border-width': '5px'
+// 				});
+// 			$('.wrong').css({
+// 				'border-color':'blue',
+// 				'border-width': '5px',
+// 				'opacity': '0.5'
+// 			});
+
+// 	};
+
+// 	// 			--------------DOM CREATION AND MANIPULATION--------------
+
+// 		// Start button starts the game and hides itself
+// 	buttonLayout.on('click','.start-game', function (){
+// 		startGame();
+// 	});
+
+		
+// 		// On a click of The Knight during character select, it loads Kanir's stats
+// 		$('.character-buttons').on('click','.btn-kanir',(function() {
+// 			currentCharacter = kanir;
+// 			characterInfo(kanir);
+// 			characterChoice();
+// 		})
+// 		);
+// 		// On a click of The Wizard during character select, it loads Devaio's stats
+// 		$('.btn-devaio').click(function () {
+// 			currentCharacter = devaio;
+// 			characterInfo(devaio);
+// 			characterChoice();
+// 	var intuitionButton = $('.character-display').append('<button type="button" class="btn-info intuition">Intuition</button>');		
+
+// 			intuitionButton;
+
+// 		});
+
+// 		// On a click of The Rogue during character select, it loads Shadow's stats
+// 		$('.btn-shadow').click(function () {
+// 			currentCharacter = shadow;
+// 			characterInfo(shadow);
+// 			characterChoice();
+// 		});
+		
+	
+// 	// On click, generates a random question for the given monster
+// 	buttonLayout.on('click','.generate', function () {
+// 		postAnEncounter();
+// 	});
+	
+
+// 	buttonLayout.on('click','.test', function () {
+// 		generateQuestions();
+// 	});
+
+// 		// If the player chooses the right answer, it subtracts a hit point from the monster
+// 	$(placeArea).on('click','.answer-btn[data-answer="true"]',function(){
+// 	var monsterTakesHit = currentMonster.health -- ;
+// 			console.log("CORRECT");
+// 			var probablity = Math.random();
+// 			// console.log(probablity);
+// 			if (currentCharacter.job.ability.name === "Cunning") {
+// 			cunning(probablity);
+// 			};
+
+// 			monsterTakesHit;
+// 			console.log(currentMonster.health)
+			
+// 			highlightCorrect();
+// 			_.delay(generateQuestions,3000);
+
+
+// 	});
+// 	// If the answer chosen is wrong, it subtracts health from the player
+// 	$(placeArea).on('click','.answer-btn[data-answer="false"]',function(){
+// 			console.log("WRONG");
+// 			var playerTakesHit = currentCharacter.job.health -- ;
+// 			probablity = Math.random();
+// 			console.log(probablity);
+// 			if (currentCharacter.job.ability.name === "Block") {
+// 			block(probablity);
+// 			};
+// 			playerTakesHit;
+// 			console.log(currentCharacter.job.health)
+// 			highlightWrong();
+// 				_.delay(generateQuestions,3000);
+
+// 	});
+// // Demo day/Debug Function to instantly kill the current monster
+
+// 	// buttonLayout.on('click','.nuke', function () {
+// 	// 	console.log('Enemy NUKE');
+// 	// 	currentMonster.health = 0;
+// 	// 	highlightWrong();
+// 	// 	highlightCorrect();
+// 	// 	_.delay(generateQuestions,2000);
+// 	// });
+// // Demo day/Debug Function to instantly kill the current character
+
+// 	// buttonLayout.on('click','.self-destruct',function(){
+// 	// 	console.log('Player NUKED');
+// 	// 	currentCharacter.job.health = 0;
+// 	// 	highlightWrong();
+// 	// 	highlightCorrect();
+// 	// 	_.delay(generateQuestions,2000);
+// 	// });
+
+// // Adds a mock up of the Wizard's Intuition ability
+// 	$('.character-display').on('click','.intuition', function (){
+// 		console.log("INTUTION oooooh");
+// 		highlightCorrect();
+// 	})
+
+// 	// Reset the game
+// 	buttonLayout.on('click','.reset-game', function (){
+// 		resetGame();
+// 	});	
+
+
+
+
+// });

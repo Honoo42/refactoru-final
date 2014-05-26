@@ -1,0 +1,33 @@
+{
+  "meteor": {},
+  "dependencies": {
+    "basePackages": {
+      "moment": {},
+      "font-awesome": {},
+      "jade": {},
+      "streams": {}
+    },
+    "packages": {
+      "moment": {
+        "git": "https://github.com/acreeger/meteor-moment.git",
+        "tag": "v2.6.0",
+        "commit": "26156df681750fd6e6ed77043eef32b6653ebbdf"
+      },
+      "font-awesome": {
+        "git": "https://github.com/nate-strauser/meteor-font-awesome.git",
+        "tag": "v4.1.0",
+        "commit": "ce6b1e92715d1938babc5d69c655c17e387f5926"
+      },
+      "jade": {
+        "git": "https://github.com/mquandalle/meteor-jade.git",
+        "tag": "v0.2.4",
+        "commit": "a47a4c59daaa57e7fe5f1544d4ea76d95a5c9abf"
+      },
+      "streams": {
+        "git": "https://github.com/arunoda/meteor-streams.git",
+        "tag": "v0.1.17",
+        "commit": "9fcbbc9b7bf542827babc92089c19e730892a22f"
+      }
+    }
+  }
+}

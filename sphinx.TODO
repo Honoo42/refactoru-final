@@ -1,0 +1,32 @@
+Sphinx ver 2
+ ☐ Improve the name
+ ☐ Import existing Sphinx source code into Meteor/Emblem @today:
+     Do the ui.js and link up the start of game buttons
+ ☐ Add User Accounts using Meteor and Login Authenication
+
+--- ✄ -----------------------
+ ☐ Overall Tasks:
+   Chat System
+   Add new classes
+   Add new monsters
+   Add new levels
+   Improve UI 
+   Implement multiplayer
+   Leaderboard support
+   Achievements tied to accounts
+   More Trivia
+--- ✄ -----------------------
+*Notes*
+    Metorite packages to use: Iron-Router, Accounts-UI, Accounts- Twitter, Accounts - Facebook
+
+
+--- ✄ -----------------------
+  Challenges
+  
+
+
+
+
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+Archive:
+ ✔ Meteor + Jade+Handlebars @done (14-05-26 17:44)
