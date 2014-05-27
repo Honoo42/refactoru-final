@@ -32,14 +32,10 @@ template(name='chatMessage')
 	
 template(name='leaderboard')
 	.leaderboard
-		each users
-			+user
-		if selected_name
-			.details
-				.name = selected_name
-				input.inc(type="button",value="Give 5 points")
-		else
-			.none Click a Player to select
+		h1 These are your scores
+		ul
+			each scores
+				li #{monsters}
 
 template(name="user")
 	.user(class=selected)

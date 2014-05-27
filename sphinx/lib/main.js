@@ -2,6 +2,15 @@
 var greet = function(name) {
     console.log("Hi. I'm " + name);
 }
+Scores = new Meteor.Collection('scores');
+if (Meteor.isClient) {
+	Template.scores.helpers({
+		scores: function(){
+			return Scores.find();
+		}
+	})
+
+};
 Meteor.myFunctions ={
 	probablity: Math.random(),
 	pickAMonster : function () {	
