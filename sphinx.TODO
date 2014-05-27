@@ -1,9 +1,7 @@
 Sphinx ver 2
  ☐ Improve the name
- ☐ Import existing Sphinx source code into Meteor/Emblem @today:
-     Do the ui.js and link up the start of game buttons
- ☐ Add User Accounts using Meteor and Login Authenication
-
+ ☐ Improve UI
+ ☐ Leaderboard Support
 --- ✄ -----------------------
  ☐ Overall Tasks:
    Chat System
@@ -22,11 +20,16 @@ Sphinx ver 2
 
 --- ✄ -----------------------
   Challenges
-  
+  Converting jQuery heavy logic into Jade, Handlebars, and Meteor
+  jQuery must be encapsulataed in a if(Meteor.isclient){} to function properly and not throw errors
+  Calling functions from other documents require a call of Meteor.myFunctions.~
 
 
 
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Import existing Sphinx source code into Meteor/Emblem @today: @done (14-05-27 14:59)
+  Do the ui.js and link up the start of game buttons
+ ✔ Add User Accounts using Meteor and Login Authenication @done (14-05-27 14:59)
  ✔ Meteor + Jade+Handlebars @done (14-05-26 17:44)

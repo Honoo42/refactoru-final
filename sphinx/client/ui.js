@@ -45,38 +45,62 @@ chatStream.on('chat', function(message) {
 });
 
 // ---------------------Game Functionality------------
-Template.buttons.helpers({
-  "startGameHide" : function(){
-    $('.character').hide();
+if (Meteor.isClient) {
+     Meteor.startup(function(){
+     $('.character').hide();
     $('.generate').hide();
     $('.reset-game').hide();
-  }
-});
+    var placeArea = $('.placement');
+  })
+};
+// Template.buttons.helpers({
+//   "startGameHide" : function(){
+//     $('.character').hide();
+//     $('.generate').hide();
+//     $('.reset-game').hide();
+//   }
+// });
+var placeArea = $('.placement');
 Template.buttons.events({
   "click .start-game": function(){
       $('.start-game').hide();
-      $('.btn-kanir').removeClass('hidden');
-      $('.btn-devaio').removeClass('hidden');
-      $('.btn-shadow').removeClass('hidden');
+      $('.btn-kanir').show();
+      $('.btn-devaio').show();
+      $('.btn-shadow').show();
 
       console.log("This start button was clicked!");
   },
   "click .btn-kanir": function(){
     $('.character').hide();
-    $('.generate').removeClass('hidden');
-    $('.reset-game').removeClass('hidden');
+    $('.generate').show();
+    $('.reset-game').show();
 
   },
   "click .btn-devaio": function(){
     $('.character').hide();
-    $('.generate').removeClass('hidden');
-    $('.reset-game').removeClass('hidden');
+    $('.generate').show();
+    $('.reset-game').show();
 
   },
   "click .btn-shadow": function(){
     $('.character').hide();
-    $('.generate').removeClass('hidden');
-    $('.reset-game').removeClass('hidden');
+     $('.generate').show();
+    $('.reset-game').show();
 
+  },
+  "click .generate": function(){
+    var placeArea = $('.placement');
+    console.log("Hey this is before the encounter")
+    console.log(Meteor.myFunctions.pickAMonster());
+    $('.placement').append(Meteor.myFunctions.startEncounter());
+    console.log("Hey this is redonkalous")
+  },
+  "click .reset-game": function(){
+    $('.character-display').empty();
+    $('.encounter-string').empty();
+    $('.placement').empty();
+    $('.generate').hide();
+    $('.reset-game').hide();
+    $('.start-game').show();
   }
 });

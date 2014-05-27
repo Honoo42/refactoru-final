@@ -17,7 +17,7 @@ body
 
 	script(src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js")
 	script(src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js")
-	script(src="main.js")
+	script(src="../main.js")
 		
 template(name='header')
 	header.page-header
@@ -33,15 +33,15 @@ template(name='navbar')
 template(name='buttons')
 	.button-start
 		button.btn.btn-success.start-game(type='button')  Start Game
-		button.btn.btn-warning.generate.hidden(type='button') Start The Level
-		button.btn.btn-reset.btn-danger.reset-game.hidden(type='button') Reset Game Session
+		button.btn.btn-warning.generate(type='button') Start The Level
+		button.btn.btn-reset.btn-danger.reset-game(type='button') Reset Game Session
 		//- button.btn.test(type='button') TEST
 		//- button.btn.btn-danger.nuke(type='button') Enemy Nuke
 		//- button.btn.btn-danger.self-destruct(type='button') Player Nuke
 		.character-buttons
-			button.btn-info.character.btn-kanir.hidden(type='button') The Knight
-			button.btn-info.character.btn-devaio.hidden(type='button') The Wizard
-			button.btn-info.character.btn-shadow.hidden(type='button') The Rogue
+			button.btn-info.character.btn-kanir(type='button') The Knight
+			button.btn-info.character.btn-devaio(type='button') The Wizard
+			button.btn-info.character.btn-shadow(type='button') The Rogue
 template(name="gameboard")
 	.game-area.row
 		.col-xs-2.character-display.col-xs-offset-1
