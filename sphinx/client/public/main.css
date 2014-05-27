@@ -5,7 +5,20 @@
   margin: -2% 0% 0% 0%;
   padding: .6em;
 }
-
+.user-display{
+	text-align: right;
+	color: thistle;
+	font-size: 26px;
+	font-family: fantasy;
+	text-decoration: bold;
+}
+.visitor-display{
+	text-align: right;
+	color: firebrick;
+	font-size: 20px;
+	font-family: fantasy;
+	text-decoration: italic;
+}
 .list-group {
 /*  width: 30%;
   background-image: url(http://opengameart.org/sites/default/files/styles/medium/public/rockwalledges.png);*/

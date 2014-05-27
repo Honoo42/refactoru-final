@@ -8,9 +8,16 @@ head
 body
 	+header
 	.background
+	if currentUser
+		+currentUser
+	else
+		+visitor
 	+navbar
 	+buttons
 	+gameboard
+	
+	//- +buttons
+	//- +gameboard
 
 
 
@@ -19,6 +26,8 @@ body
 	script(src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js")
 	script(src="../main.js")
 		
+
+
 template(name='header')
 	header.page-header
 		h1
@@ -49,6 +58,13 @@ template(name="gameboard")
 			.question-area
 				.placement
 		.col-xs-2.encounter-string
+template(name="currentUser")
+	.user-name.row
+		.col-xs-3.user-display.col-xs-offset-9 Hello, #{currentUser.username}!
+
+template(name="visitor")
+	.user-name.row
+		.col-xs-3.visitor-display.col-xs-offset-9 Welcome Visitor! Please have a look around and sign up to start the fun!!
 
 //- template(name="startGame")
 

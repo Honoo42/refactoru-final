@@ -1,5 +1,15 @@
 //  ---------------Chat Functionality---------------
 // assign collection to the `messages` helper in `chatBox` template
+if (Meteor.isClient) {
+     Meteor.startup(function(){
+     $('.chat-container').hide();
+     $('.user-reference').hide();
+     $('#messages').hide();
+     $('#chat-message').hide();
+     $('#send').hide();
+     $('.reveal-chat').show();
+  })
+};
 Template.chatBox.helpers({
   "messages": function() {
     return chatCollection.find();
@@ -20,6 +30,17 @@ Template.chatMessage.helpers({
   }
 });
  
+Template.revealChat.events({
+  "click #reveal-chat": function(){
+    $('.chat-container').show();
+     $('.user-reference').show();
+     $('#messages').show();
+     $('#chat-message').show();
+     $('#send').show();
+     $('#close-chat').show();
+     $('#reveal-chat').hide();
+  }
+ })
 // when `Send Chat` clicked, add the typed chat message into the collection
 Template.chatBox.events({
   "click #send": function() {
@@ -31,6 +52,15 @@ Template.chatBox.events({
     $('#chat-message').val('');
     // Adds the message to Meteor Stream
     chatStream.emit('chat',message);
+  },
+  "click #close-chat": function() {
+    $('.chat-container').hide();
+     $('.user-reference').hide();
+     $('#messages').hide();
+     $('#chat-message').hide();
+     $('#send').hide();
+     $('#close-chat').hide();
+     $('#reveal-chat').show();
   }
 });
 
@@ -51,6 +81,8 @@ if (Meteor.isClient) {
     $('.generate').hide();
     $('.reset-game').hide();
     var placeArea = $('.placement');
+ 
+
   })
 };
 // Template.buttons.helpers({
@@ -67,6 +99,7 @@ Template.buttons.events({
       $('.btn-kanir').show();
       $('.btn-devaio').show();
       $('.btn-shadow').show();
+
 
       console.log("This start button was clicked!");
   },
