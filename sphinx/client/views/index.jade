@@ -31,17 +31,17 @@ template(name='navbar')
 		li.list-group-item Monsters
 		li.list-group-item Locations
 template(name='buttons')
-	.button-layout
+	.button-start
 		button.btn.btn-success.start-game(type='button')  Start Game
-		button.btn.btn-warning.generate(type='button') Start The Level
-		button.btn.btn-reset.btn-danger.reset-game(type='button') Reset Game Session
+		button.btn.btn-warning.generate.hidden(type='button') Start The Level
+		button.btn.btn-reset.btn-danger.reset-game.hidden(type='button') Reset Game Session
 		//- button.btn.test(type='button') TEST
 		//- button.btn.btn-danger.nuke(type='button') Enemy Nuke
 		//- button.btn.btn-danger.self-destruct(type='button') Player Nuke
 		.character-buttons
-			button.btn-info.character.btn-kanir(type='button') The Knight
-			button.btn-info.character.btn-devaio(type='button') The Wizard
-			button.btn-info.character.btn-shadow(type='button') The Rogue
+			button.btn-info.character.btn-kanir.hidden(type='button') The Knight
+			button.btn-info.character.btn-devaio.hidden(type='button') The Wizard
+			button.btn-info.character.btn-shadow.hidden(type='button') The Rogue
 template(name="gameboard")
 	.game-area.row
 		.col-xs-2.character-display.col-xs-offset-1

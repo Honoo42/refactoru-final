@@ -55,14 +55,28 @@ Template.buttons.helpers({
 Template.buttons.events({
   "click .start-game": function(){
       $('.start-game').hide();
-      $('.btn-kanir').show();
-      $('.btn-devaio').show();
-      $('.btn-shadow').show();
+      $('.btn-kanir').removeClass('hidden');
+      $('.btn-devaio').removeClass('hidden');
+      $('.btn-shadow').removeClass('hidden');
 
       console.log("This start button was clicked!");
   },
   "click .btn-kanir": function(){
-    $('character').hide()
-    
+    $('.character').hide();
+    $('.generate').removeClass('hidden');
+    $('.reset-game').removeClass('hidden');
+
+  },
+  "click .btn-devaio": function(){
+    $('.character').hide();
+    $('.generate').removeClass('hidden');
+    $('.reset-game').removeClass('hidden');
+
+  },
+  "click .btn-shadow": function(){
+    $('.character').hide();
+    $('.generate').removeClass('hidden');
+    $('.reset-game').removeClass('hidden');
+
   }
 });

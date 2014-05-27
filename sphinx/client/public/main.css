@@ -59,13 +59,17 @@
 }
 
 /*Game Control Buttons*/
-.button-layout {
+.button-start {
   text-align: center;
 };
 
 .btn {
   z-index: 100;
   /*position: absolute;*/
+};
+
+.buttons-gameplay {
+  text-align: center;
 };
 
 .character-buttons {
