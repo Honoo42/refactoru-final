@@ -703,6 +703,7 @@ if(Meteor.isClient){
 					);
 				updateHealth();
 				if (currentMonster.health <= 0) {
+					// when the monsters health is zero or below, it should increment the database
 					 Meteor.myFunctions.scores()
 					placeArea.empty();
 					placeArea.append("<p class='play-area victory'>You Are Victorious! Loading the Next Encounter...</p>");

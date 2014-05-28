@@ -20,6 +20,7 @@ body
 
 
 
+
 	script(src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js")
 	script(src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js")
 	script(src="../main.js")
@@ -38,6 +39,8 @@ template(name='navbar')
 		li.list-group-item: a(href="{{pathFor 'monsters'}}") Monsters
 		li.list-group-item: a(href="{{pathFor 'locations'}}") Locations
 		li.list-group-item: a(href="{{pathFor 'about'}}") About
+		li.list-group-item: a(href="{{pathFor 'profile'}}") Profile
+		li.list-group-item: a(href="{{pathFor 'admin'}}") Admin Page
 
 
 template(name='buttons')
@@ -72,17 +75,17 @@ template(name="about")
 		p SPHINX is the ongoing project of RefactorU student Sean Manhertz during his ten weeks at the program
 	
 template(name="monsters")
-	+loginButtons
+	
 	.game-information
 		button.btn.btn-warning.game-info Close This Field
 		p Goblins Trolls and Ogres oh my
 template(name="characters")
-	+loginButtons
+	
 	.game-information
 		button.btn.btn-warning.game-info Close This Field
 		p Kanir Devaio Shadow
 template(name="locations")
-	+loginButtons
+	
 	.game-information
 		button.btn.btn-warning.game-info Close This Field
 		p Forest of Tymierl
@@ -90,3 +93,25 @@ template(name="home")
 	+buttons
 	+gameboard
 
+template(name="admin")
+	if isAdminUser
+		+accountsAdmin
+	else
+		p Must be admin to view
+
+template(name="user_profile")
+	h4 Username
+		p #{currentUser.username}
+	h4 Current Character
+		p #{character}
+		p #{currentCharacter}
+
+template(name="item")
+	span: a(href="#{profileUrl}") #{author} 
+
+template(name="profile")
+	h4 Username
+		p #{currentUser.username}
+	h4 Current Character
+		p.character-profile  #{character}
+		//- p #{currentCharacter.name} 

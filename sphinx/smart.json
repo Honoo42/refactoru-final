@@ -6,6 +6,9 @@
     "streams": {},
     "mongo-counter": {},
     "collection-behaviours": {},
-    "iron-router": {}
+    "iron-router": {},
+    "roles": {},
+    "accounts-admin-ui-bootstrap-3": {},
+    "accounts-ui-bootstrap-3": {}
   }
 }

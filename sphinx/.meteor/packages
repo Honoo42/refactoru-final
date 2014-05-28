@@ -4,8 +4,6 @@
 # but you can also edit it by hand.
 
 standard-app-packages
-autopublish
-insecure
 accounts-ui
 accounts-twitter
 accounts-password
@@ -18,3 +16,6 @@ streams
 mongo-counter
 collection-behaviours
 iron-router
+roles
+accounts-admin-ui-bootstrap-3
+accounts-ui-bootstrap-3

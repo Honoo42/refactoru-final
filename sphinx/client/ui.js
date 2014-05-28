@@ -74,6 +74,9 @@ chatStream.on('chat', function(message) {
   });
 });
 
+// Template.leaderboard.event({
+  
+// })
 // ---------------------Game Functionality------------
 if (Meteor.isClient) {
      Meteor.startup(function(){
@@ -108,19 +111,20 @@ Template.buttons.events({
     $('.character').hide();
     $('.generate').show();
     $('.reset-game').show();
+    Session.set("character","You are playing as Kanir");
 
   },
   "click .btn-devaio": function(){
     $('.character').hide();
     $('.generate').show();
     $('.reset-game').show();
-
+    Session.set("character","You are playing as Devaio");
   },
   "click .btn-shadow": function(){
     $('.character').hide();
      $('.generate').show();
     $('.reset-game').show();
-
+    Session.set("character","You are playing as Shadow");
   },
   "click .generate": function(){
     var placeArea = $('.placement');
@@ -136,6 +140,7 @@ Template.buttons.events({
     $('.generate').hide();
     $('.reset-game').hide();
     $('.start-game').show();
+    Session.set("character","");
   },
 
 });
@@ -161,3 +166,33 @@ Template.characters.events({
     $('.game-info').hide();
   }
 });
+
+Template.profile.helpers({
+  username: function() {return Meteor.user().username},
+  character: function(){
+    return Session.get('character')
+    }
+});
+
+
+
+Template.user_profile.helpers({
+  username: function() {return Meteor.user().username},
+  character: function(){
+    return currentCharacter.name
+    }
+});
+
+Template.item.helpers({
+   profileUrl: function() {
+       var user = Meteor.users.findOne(this.userId, {reactive:false});
+       if(user)
+           return getProfileUrlById(user);
+   }
+});
+
+getProfileUrlById = function(id) {
+
+    return Meteor.absoluteUrl()+'users/' + id;
+
+}

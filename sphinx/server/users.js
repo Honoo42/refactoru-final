@@ -12,3 +12,7 @@ Meteor.publish(null, function() {
     }
     // console.log("Outside the if statement:",user.username)
 });
+// allows users to see eachother's profiles
+Meteor.publish('singleUser', function(userId) {
+       return Meteor.users.find(userId);
+    });
