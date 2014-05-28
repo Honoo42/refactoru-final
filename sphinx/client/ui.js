@@ -81,7 +81,7 @@ if (Meteor.isClient) {
     $('.generate').hide();
     $('.reset-game').hide();
     var placeArea = $('.placement');
- 
+   
 
   })
 };
@@ -101,7 +101,7 @@ Template.buttons.events({
       $('.btn-shadow').show();
 
 
-      console.log("This start button was clicked!");
+      // console.log("This start button was clicked!");
   },
   "click .btn-kanir": function(){
     $('.character').hide();
@@ -123,10 +123,10 @@ Template.buttons.events({
   },
   "click .generate": function(){
     var placeArea = $('.placement');
-    console.log("Hey this is before the encounter")
-    console.log(Meteor.myFunctions.pickAMonster());
+    // console.log("Hey this is before the encounter")
+    // console.log(Meteor.myFunctions.pickAMonster());
     $('.placement').append(Meteor.myFunctions.startEncounter());
-    console.log("Hey this is redonkalous")
+    // console.log("Hey this is redonkalous")
   },
   "click .reset-game": function(){
     $('.character-display').empty();

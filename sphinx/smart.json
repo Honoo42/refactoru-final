@@ -3,6 +3,7 @@
     "moment": {},
     "font-awesome": {},
     "jade": {},
-    "streams": {}
+    "streams": {},
+    "mongo-counter": {}
   }
 }

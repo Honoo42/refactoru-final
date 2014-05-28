@@ -3,13 +3,25 @@ var greet = function(name) {
     console.log("Hi. I'm " + name);
 }
 Scores = new Meteor.Collection('scores');
-if (Meteor.isClient) {
-	Template.scores.helpers({
-		scores: function(){
-			return Scores.find();
-		}
-	})
+// 				if (Meteor.isClient) {
+// 	Template.leaderboard.events({
+// 		scores: function(){
+// 			if (currentMonster.health <= 0) {
+// 				console.log("Leaderboard Start")
+// 				Scores.insert({
+// 					'monster':currentMonster.name,
+// 					'count': 1+
+// 				})
 
+// 			}
+// 			console.log("Leaderboard End")
+
+// 		}
+// 	})
+
+// };
+if (Meteor.isServer) {
+	
 };
 Meteor.myFunctions ={
 	probablity: Math.random(),
@@ -112,7 +124,28 @@ Meteor.myFunctions ={
 			monsterInfo(currentMonster);
 			answerAddClass();
 		},
-		placeArea : function(){$('.placement')}
+		placeArea : function(){$('.placement')},
+		addCount:function(){
+			console.log("Start of addCount")
+			var counter = incrementCounter('count',1)
+			console.log("incrementCounter")
+			Scores.insert({'count':0})
+			return counter;
+
+		},
+		scores: function(){
+
+			if (currentMonster.health <= 0) {
+				console.log("Leaderboard Start")
+				Meteor.myFunctions.addCount()
+				Scores.insert({
+					'monster':currentMonster.name,
+				})
+
+			}
+			console.log("Leaderboard End")
+
+		}
 }
 // Everything in here is only run on the server.
 if(Meteor.isServer) {
@@ -670,10 +703,12 @@ if(Meteor.isClient){
 					);
 				updateHealth();
 				if (currentMonster.health <= 0) {
+					 Meteor.myFunctions.scores()
 					placeArea.empty();
 					placeArea.append("<p class='play-area victory'>You Are Victorious! Loading the Next Encounter...</p>");
 					_.delay(postAnEncounter,2000);
 				};
+
 				if (currentCharacter.job.health <= 0) {
 					placeArea.empty();
 					placeArea.append("<p class='play-area defeat'>You Have Been DEFEATED! Read Up On Your Trivia And Try Again!</p>");
