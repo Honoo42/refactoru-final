@@ -93,6 +93,7 @@ if (Meteor.isClient) {
 //   }
 // });
 var placeArea = $('.placement');
+
 Template.buttons.events({
   "click .start-game": function(){
       $('.start-game').hide();
@@ -135,5 +136,28 @@ Template.buttons.events({
     $('.generate').hide();
     $('.reset-game').hide();
     $('.start-game').show();
+  },
+
+});
+
+Template.monsters.events({
+  "click .game-info": function(){
+    console.log("clicked!")
+    $('.game-information').hide();
+    $('.game-info').hide();
+  }
+});
+Template.locations.events({
+  "click .game-info": function(){
+    console.log("clicked!")
+    $('.game-information').hide();
+    $('.game-info').hide();
+  }
+});
+Template.characters.events({
+  "click .game-info": function(){
+    console.log("clicked!")
+    $('.game-information').hide();
+    $('.game-info').hide();
   }
 });

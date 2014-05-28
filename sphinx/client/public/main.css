@@ -131,7 +131,8 @@
   position: fixed;
   height: 100%;
   width: 100%;
-  background-image: url(http://opengameart.org/sites/default/files/map_4.png);
+  /*background-image: url(http://opengameart.org/sites/default/files/city_background_night.png);*/
+ background-image: url(http://opengameart.org/sites/default/files/map_4.png);
   background-repeat: repeat-y;
   background-size: 100% 100%;
   opacity: .75;

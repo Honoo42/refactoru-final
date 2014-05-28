@@ -21,7 +21,7 @@ Scores = new Meteor.Collection('scores');
 
 // };
 if (Meteor.isServer) {
-	
+
 };
 Meteor.myFunctions ={
 	probablity: Math.random(),
@@ -137,9 +137,9 @@ Meteor.myFunctions ={
 
 			if (currentMonster.health <= 0) {
 				console.log("Leaderboard Start")
-				Meteor.myFunctions.addCount()
+				// Meteor.myFunctions.addCount()
 				Scores.insert({
-					'monster':currentMonster.name,
+					'monsters':currentMonster.name,
 				})
 
 			}

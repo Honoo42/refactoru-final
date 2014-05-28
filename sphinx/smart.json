@@ -4,6 +4,8 @@
     "font-awesome": {},
     "jade": {},
     "streams": {},
-    "mongo-counter": {}
+    "mongo-counter": {},
+    "collection-behaviours": {},
+    "iron-router": {}
   }
 }

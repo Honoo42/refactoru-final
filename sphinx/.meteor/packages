@@ -16,3 +16,5 @@ font-awesome
 jade
 streams
 mongo-counter
+collection-behaviours
+iron-router

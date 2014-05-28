@@ -16,9 +16,6 @@ body
 	+navbar
 	+buttons
 	+gameboard
-	
-	//- +buttons
-	//- +gameboard
 
 
 
@@ -37,9 +34,12 @@ template(name='header')
 		
 template(name='navbar')
 	ul.nav.nav-pills.list-group
-		li.list-group-item Character Info
-		li.list-group-item Monsters
-		li.list-group-item Locations
+		li.list-group-item: a(href="{{pathFor 'characters'}}") Character Info
+		li.list-group-item: a(href="{{pathFor 'monsters'}}") Monsters
+		li.list-group-item: a(href="{{pathFor 'locations'}}") Locations
+		li.list-group-item: a(href="{{pathFor 'about'}}") About
+
+
 template(name='buttons')
 	.button-start
 		button.btn.btn-success.start-game(type='button')  Start Game
@@ -67,5 +67,26 @@ template(name="visitor")
 	.user-name.row
 		.col-xs-3.visitor-display.col-xs-offset-9 Welcome Visitor! Please have a look around and sign up to start the fun!!
 
+template(name="about")
+	h1 About SPHINX
+		p SPHINX is the ongoing project of RefactorU student Sean Manhertz during his ten weeks at the program
 	
-	
+template(name="monsters")
+	+loginButtons
+	.game-information
+		button.btn.btn-warning.game-info Close This Field
+		p Goblins Trolls and Ogres oh my
+template(name="characters")
+	+loginButtons
+	.game-information
+		button.btn.btn-warning.game-info Close This Field
+		p Kanir Devaio Shadow
+template(name="locations")
+	+loginButtons
+	.game-information
+		button.btn.btn-warning.game-info Close This Field
+		p Forest of Tymierl
+template(name="home")
+	+buttons
+	+gameboard
+

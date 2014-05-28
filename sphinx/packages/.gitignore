@@ -5,3 +5,7 @@
 /emblem
 /streams
 /mongo-counter
+/collection-behaviours
+/collection-hooks
+/iron-router
+/blaze-layout
