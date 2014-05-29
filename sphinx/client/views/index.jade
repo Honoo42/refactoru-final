@@ -94,10 +94,18 @@ template(name="home")
 	+gameboard
 
 template(name="admin")
+	+loginButtons
 	if isAdminUser
 		+accountsAdmin
 	else
 		p Must be admin to view
+
+template(name="trivia")
+	+loginButtons
+	if isAdminUser
+		+submitTrivia
+	else
+		h1 Must Be an Admin to View this Page
 
 template(name="user_profile")
 	h4 Username

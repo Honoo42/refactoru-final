@@ -1,5 +1,11 @@
 Accounts.ui.config({
-  passwordSignupFields: "USERNAME_ONLY"
+	requestPermissions:{
+		facebook:['user_likes'],
+		github: ['user','repo'],
+		twitter: ['user']
+
+	},
+  passwordSignupFields: "USERNAME_AND_EMAIL"
 });
 getUsername = function(id) {
   Meteor.subscribe('user-info', id);

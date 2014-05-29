@@ -5,9 +5,7 @@
 
 standard-app-packages
 accounts-ui
-accounts-twitter
 accounts-password
-accounts-google
 bootstrap
 moment
 font-awesome
@@ -18,4 +16,8 @@ collection-behaviours
 iron-router
 roles
 accounts-admin-ui-bootstrap-3
-accounts-ui-bootstrap-3
+accounts-twitter
+oauth
+accounts-github
+google
+accounts-google
