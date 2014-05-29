@@ -16,7 +16,8 @@ Meteor.publish(null, function() {
 Meteor.publish('singleUser', function(userId) {
        return Meteor.users.find(userId);
     });
-
+// On account creation, checks to see if another account with the same email exists
+// If it does, it merges the two accounts together
 Accounts.onCreateUser (function(options,user) {
   console.log(options, user);
   user.city = null

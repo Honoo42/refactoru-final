@@ -16,6 +16,7 @@ body
 	+navbar
 	+buttons
 	+gameboard
+	+submitTrivia
 
 
 
@@ -100,12 +101,7 @@ template(name="admin")
 	else
 		p Must be admin to view
 
-template(name="trivia")
-	+loginButtons
-	if isAdminUser
-		+submitTrivia
-	else
-		h1 Must Be an Admin to View this Page
+
 
 template(name="user_profile")
 	h4 Username
@@ -122,4 +118,26 @@ template(name="profile")
 		p #{currentUser.username}
 	h4 Current Character
 		p.character-profile  #{character}
-		//- p #{currentCharacter.name} 
+
+template(name="submitTrivia")
+	h1 Add your new trivia questions below
+		.addTrivia
+			input.new-trivia.new_title(type="text",placeholder="Please Enter a Title in camelCase")
+
+			input.new-trivia.new_question(type="text",placeholder="Please insert a question")
+			
+			input.new-trivia.difficulty(type="number",placeholder="Difficulty")
+			
+			input.new-trivia.correct(type="text",placeholder="Correct Answer")
+			
+			input.new-trivia.wrong1(type="text",placeholder="Wrong")
+
+			input.new-trivia.wrong2(type="text",placeholder="Wrong")
+
+			input.new-trivia.wrong3(type="text",placeholder="Wrong")
+
+			input.btn.btn-primary.add(type="button", value="Add to Database")
+
+			input.new-trivia.test_val(type="text",placeholder="Please Test")
+			
+			input.btn.btn-warning.test-btn(type="button", value="Test")

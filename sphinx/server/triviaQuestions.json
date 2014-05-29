@@ -1,7 +1,6 @@
+// TriviaCollection = new Meteor.Collection("triviaQuestions");
 
-TriviaCollection.insert(
 	{
-		"Triva": [{
 			"donaldDuckName" :{
 				"question":"What is Donald Duck's middle name?", 
 				"difficulty":2,
@@ -181,5 +180,4 @@ TriviaCollection.insert(
 				"correct":['101',true],
 				"wrong": [['103',false],['1',false],['None any more, Cruella De Vil got all of them',false]]
 			}
-		}]
-})
+

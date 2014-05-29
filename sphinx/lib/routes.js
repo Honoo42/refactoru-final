@@ -41,18 +41,18 @@ Router.map(function(){
     });	
     // creates a route to a form to submit new trivia questions to the database
     // that is only accessible by being logged in with an admin account
-    this.route('trivia', {
-    	path:'/submit_trivia',
-    	template: 'submitTrivia',
-    	onBeforeAction: function() {
-            if (Meteor.loggingIn()) {
-                this.render(this.loadingTemplate);
-            } else if(!Roles.userIsInRole(Meteor.user(), ['admin'])) {
-                console.log('redirecting');
-                this.redirect('/');
-            }
-        }
-    });
+    // this.route('trivia', {
+    // 	path:'/submit_trivia',
+    // 	template: 'submitTrivia',
+    // 	onBeforeAction: function() {
+    //         if (Meteor.loggingIn()) {
+    //             this.render(this.loadingTemplate);
+    //         } else if(!Roles.userIsInRole(Meteor.user(), ['admin'])) {
+    //             console.log('redirecting');
+    //             this.redirect('/');
+    //         }
+    //     }
+    // });
 
 });
 
