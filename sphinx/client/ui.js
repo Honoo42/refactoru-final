@@ -209,13 +209,16 @@ Template.submitTrivia.events({
 
 
     TriviaCollection.insert(
-        {
+        // {$push:
+          {
           "title": new_title,
           "question": new_question, 
           "difficulty": new_difficulty,
           "correct": [new_correct,true],
           "wrong": [[new_wrong1,false],[new_wrong2,false],[new_wrong3,false]]
-        }
+          }
+        // }
+
     )
      console.log("You've added a question!");
   },
