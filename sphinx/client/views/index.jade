@@ -16,7 +16,7 @@ body
 	+navbar
 	+buttons
 	+gameboard
-	+submitTrivia
+	
 
 
 
@@ -42,6 +42,8 @@ template(name='navbar')
 		li.list-group-item: a(href="{{pathFor 'about'}}") About
 		li.list-group-item: a(href="{{pathFor 'profile'}}") Profile
 		li.list-group-item: a(href="{{pathFor 'admin'}}") Admin Page
+		li.list-group-item: a(href="{{pathFor 'trivia'}}") Trivia Insertion
+
 
 
 template(name='buttons')

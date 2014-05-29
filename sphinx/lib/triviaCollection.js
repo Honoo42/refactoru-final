@@ -191,7 +191,7 @@ for (var i = 0; i < collectionData.length; i++) {
 TriviaCollection.allow({
   insert: function(userId,doc){
   	var admin = 'EfgmN3itJNss8B9q8'
-    console.log("Admin:",admin,"Meteor User:",Meteor.userId(),"userId:",userId)
+    // console.log("Admin:",admin,"Meteor User:",Meteor.userId(),"userId:",userId)
     return (Meteor.userId() === admin);
   },
   update: function(admin,doc,fields,modifier){
