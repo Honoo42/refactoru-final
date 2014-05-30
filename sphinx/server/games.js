@@ -39,6 +39,13 @@ Meteor.methods({
 	setCurrentGame: function(gameId){
 		Meteor.users.update({_id: this.userId},{$set:{current_game:gameID}})
 	},
+	// Player based methods
+	declareFirstAchievement: function () {
+		console.log("Checking if eligible for a badge")
+    Players.update({monstersDefeated: {$gt: 0}},
+                   { $addToSet: {badges: "First Victory"} },
+                   {multi: true});
+  	},
 
 // ACTUAL GAME PLAY NEEDED
 

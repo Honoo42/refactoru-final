@@ -3,6 +3,15 @@ var greet = function(name) {
     console.log("Hi. I'm " + name);
 }
 Scores = new Meteor.Collection('scores');
+Meteor.users.allow({
+  insert: function(userId,doc){
+    // console.log("Admin:",admin,"Meteor User:",Meteor.userId(),"userId:",userId)
+    return (Meteor.userId() === userId);
+  },
+  update: function(userId,doc,fields,modifier){
+    return Meteor.userId() === userId;
+  }
+})
 // 				if (Meteor.isClient) {
 // 	Template.leaderboard.events({
 // 		scores: function(){
@@ -65,7 +74,7 @@ Meteor.myFunctions ={
 		},
 		startEncounter : function (){
 			
-
+			console.log(Meteor.user())
 			currentThreat = firstLevel[0];			
 				 if (currentThreat.health <= 0) 
 					{
@@ -125,25 +134,33 @@ Meteor.myFunctions ={
 			answerAddClass();
 		},
 		placeArea : function(){$('.placement')},
-		addCount:function(){
-			console.log("Start of addCount")
-			var counter = incrementCounter('count',1)
-			console.log("incrementCounter")
-			Scores.insert({'count':0})
-			return counter;
+		declareFirstAchievement: function () {
+			console.log("Checking if eligible for a badge")
+			if (Meteor.user().monstersDefeated > 0) {
+				Meteor.users.update(
+					{_id: Meteor.userId()},
+		        	{ $addToSet: {badges: "First Victory"} }
+		        );
+			};
+			
+  	},
+  	// when a monster is defeated, this finds the current user
+  	// and updates the count of the number of monsters that they've
+  	// defeated and checks to see if their are eliglible for an achievement
+		addMonstersDefeated: function(){
+			console.log("Leaderboard Start")
+			yourPlayer = Meteor.userId();
+					console.log("Hi",yourPlayer)
 
-		},
-		scores: function(){
-
-			if (currentMonster.health <= 0) {
-				console.log("Leaderboard Start")
-				// Meteor.myFunctions.addCount()
-				Scores.insert({
-					'monsters':currentMonster.name,
-				})
-
-			}
-			console.log("Leaderboard End")
+			Meteor.users.update({_id: Meteor.userId()},
+				{$inc:{monstersDefeated:1}}, 
+				{$push:{listOfDefeatedMonsters: [currentMonster.name]}},
+				function(err){
+	
+					Meteor.myFunctions.declareFirstAchievement()
+			})
+			console.log("Leaderboard End", currentMonster.name)
+			
 
 		}
 }
@@ -704,7 +721,7 @@ if(Meteor.isClient){
 				updateHealth();
 				if (currentMonster.health <= 0) {
 					// when the monsters health is zero or below, it should increment the database
-					 Meteor.myFunctions.scores()
+					Meteor.myFunctions.addMonstersDefeated()
 					placeArea.empty();
 					placeArea.append("<p class='play-area victory'>You Are Victorious! Loading the Next Encounter...</p>");
 					_.delay(postAnEncounter,2000);

@@ -120,6 +120,11 @@ template(name="profile")
 		p #{currentUser.username}
 	h4 Current Character
 		p.character-profile  #{character}
+	h4 Email
+		p Email: #{currentUser.emails.address}
+	h4 Role
+		p Site Role: #{currentUser.roles}
+	h4 Badges: #{currentUser.badges}
 
 template(name="submitTrivia")
 	h1 Add your new trivia questions below

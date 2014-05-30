@@ -6,6 +6,10 @@ Sphinx ver 2
      ✔ Have system recognize currently signed in user @done (14-05-27 17:15)
       ☐ Save data related to users gameplay to database
       ☐ Send that data back to the client to be displayed on the page
+  ☐ Admin Page
+        ✔ Form to add trivia questions to a database from the application @done (14-05-30 07:38)
+  ☐ User Accounts
+      ✔ Link together social media accounts with previosly created accounts @done (14-05-30 07:39)
 --- ✄ -----------------------
  ☐ Overall Tasks:
    Chat System
