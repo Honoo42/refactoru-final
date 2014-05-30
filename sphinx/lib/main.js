@@ -134,12 +134,50 @@ Meteor.myFunctions ={
 			answerAddClass();
 		},
 		placeArea : function(){$('.placement')},
-		declareFirstAchievement: function () {
+		monsterAchievements: function () {
 			console.log("Checking if eligible for a badge")
 			if (Meteor.user().monstersDefeated > 0) {
 				Meteor.users.update(
 					{_id: Meteor.userId()},
 		        	{ $addToSet: {badges: "First Victory"} }
+		        );
+			};
+			if (Meteor.user().monstersDefeated > 9) {
+				Meteor.users.update(
+					{_id: Meteor.userId()},
+		        	{ $addToSet: {badges: "Novice Puzzler"} }
+		        );
+			};
+			// Robert J. Walker was the secretary of the treasury and the face
+			// of the 25 cent fractional note
+			if (Meteor.user().monstersDefeated > 24) {
+				Meteor.users.update(
+					{_id: Meteor.userId()},
+		        	{ $addToSet: {badges: "Dropped a Robert Walker"} }
+		        );
+			};
+			if (Meteor.user().monstersDefeated > 41) {
+				Meteor.users.update(
+					{_id: Meteor.userId()},
+		        	{ $addToSet: {badges: "Life, Universe, and Trivia"} }
+		        );
+			};
+			if (Meteor.user().monstersDefeated > 99) {
+				Meteor.users.update(
+					{_id: Meteor.userId()},
+		        	{ $addToSet: {badges: "100 Down"} }
+		        );
+			};
+			if (Meteor.user().monstersDefeated > 124) {
+				Meteor.users.update(
+					{_id: Meteor.userId()},
+		        	{ $addToSet: {badges: "Mensa of the Old World"} }
+		        );
+			};
+			if (Meteor.user().monstersDefeated > 200) {
+				Meteor.users.update(
+					{_id: Meteor.userId()},
+		        	{ $addToSet: {badges: "The New Sphinx"} }
 		        );
 			};
 			
@@ -151,13 +189,13 @@ Meteor.myFunctions ={
 			console.log("Leaderboard Start")
 			yourPlayer = Meteor.userId();
 					console.log("Hi",yourPlayer)
-
+			var bounty = currentMonster.name;
 			Meteor.users.update({_id: Meteor.userId()},
 				{$inc:{monstersDefeated:1}}, 
-				{$push:{listOfDefeatedMonsters: [currentMonster.name]}},
+				{$push:{listOfDefeatedMonsters: [bounty]}},
 				function(err){
 	
-					Meteor.myFunctions.declareFirstAchievement()
+					Meteor.myFunctions.monsterAchievements()
 			})
 			console.log("Leaderboard End", currentMonster.name)
 			

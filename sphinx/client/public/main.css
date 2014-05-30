@@ -131,9 +131,19 @@
   position: fixed;
   height: 100%;
   width: 100%;
+  /*gif of a waterfall in a forest*/
   background-image: url(https://s3.amazonaws.com/giphymedia/media/wjJj0oXQlmDmM/giphy.gif);
+  /* background of a city*/
   /*background-image: url(http://opengameart.org/sites/default/files/city_background_night.png);*/
+  /*original background*/
  /*background-image: url(http://opengameart.org/sites/default/files/map_4.png);*/
+  /*gif of an abandoned desert ruin: https://s3.amazonaws.com/giphymedia/media/Z9cWAILTMuE1O/giphy.gif*/
+  /*gif of an underwater palace and mermaid: https://s3.amazonaws.com/giphymedia/media/d55z4Bbij0Q8g/giphy.gif*/
+  /*gif of a waterfall from inside a cave: https://s3.amazonaws.com/giphymedia/media/Ck5cboez4KCqI/giphy.gif*/
+  /*gif of the viewer looking out over the stern of a classic boat: https://s3.amazonaws.com/giphymedia/media/APhlKhhEdkUxO/200.gif*/
+  /*gif of a supernatural lightning storm outside a damaged temple: https://s3.amazonaws.com/giphymedia/media/Xcd5feHBswzDy/giphy.gif*/
+  /*gif of a red leaved forest: https://s3.amazonaws.com/giphymedia/media/72PAo3AUIP6Ks/giphy.gif*/
+  /*Gif Backgrounds from giphy.com*/
   background-repeat: repeat-y;
   background-size: 100% 100%;
   opacity: .75;

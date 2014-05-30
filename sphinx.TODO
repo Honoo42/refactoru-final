@@ -4,8 +4,9 @@ Sphinx ver 2
      ✔ Work on Chat UI, adding buttons to open and close chat window @done (14-05-27 17:14)
  ☐ Leaderboard Support
      ✔ Have system recognize currently signed in user @done (14-05-27 17:15)
-      ☐ Save data related to users gameplay to database
-      ☐ Send that data back to the client to be displayed on the page
+      ✔ Save data related to users gameplay to database @done (14-05-30 14:04)
+      ✔ Send that data back to the client to be displayed on the page @done (14-05-30 14:04)
+              ☐ Add at least 10 badges for achievements
   ☐ Admin Page
         ✔ Form to add trivia questions to a database from the application @done (14-05-30 07:38)
   ☐ User Accounts
@@ -13,7 +14,7 @@ Sphinx ver 2
 --- ✄ -----------------------
  ☐ Overall Tasks:
    Chat System
-   Add new classes
+   Implement new classes
    Add new monsters
    Add new levels
    Improve UI 
@@ -21,6 +22,7 @@ Sphinx ver 2
    Leaderboard support
    Achievements tied to accounts
    More Trivia
+     Atleast 50 new questions
 --- ✄ -----------------------
 *Notes*
     Metorite packages to use: Iron-Router, Accounts-UI, Accounts- Twitter, Accounts - Facebook
