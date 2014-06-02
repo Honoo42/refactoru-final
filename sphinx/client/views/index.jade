@@ -1,30 +1,33 @@
 //- doctype html
 //- html
 head
-	link(rel="stylesheet",type="text/css",href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css")
-	link(rel="stylesheet",type="text/css",href=".../public/main.css")
+	//- link(rel="stylesheet",type="text/css",href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css")
+	//- link(rel="stylesheet",type="text/css",href=".../public/main.css")
 
 
 body
-	+loginButtons
-	+header
 	.background
+	+header
+	+loginButtons
 	if currentUser
 		+currentUser
 	else
 		+visitor
 	+navbar
+	+modals
 	+buttons
 	+gameboard
+	+revealChat
+	+mainBox
 	
 
 
 
 
 
-	script(src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js")
-	script(src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js")
-	script(src="../main.js")
+	//- script(src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js")
+	//- script(src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js")
+	//- script(src="../main.js")
 		
 
 
@@ -48,16 +51,16 @@ template(name='navbar')
 
 template(name='buttons')
 	.button-start
-		button.btn.btn-success.start-game(type='button')  Start Game
-		button.btn.btn-warning.generate(type='button') Start The Level
-		button.btn.btn-reset.btn-danger.reset-game(type='button') Reset Game Session
+		button.btn.btn-success.start-game.grow(type='button')  Start Game
+		button.btn.btn-warning.generate.buzz(type='button') Start The Level
+		button.btn.btn-reset.btn-danger.reset-game.buzz(type='button') Reset Game Session
 		//- button.btn.test(type='button') TEST
 		//- button.btn.btn-danger.nuke(type='button') Enemy Nuke
 		//- button.btn.btn-danger.self-destruct(type='button') Player Nuke
 		.character-buttons
-			button.btn-info.character.btn-kanir(type='button') The Knight
-			button.btn-info.character.btn-devaio(type='button') The Wizard
-			button.btn-info.character.btn-shadow(type='button') The Rogue
+			button.btn-info.character.btn-kanir.hover-shadow(type='button') The Knight
+			button.btn-info.character.btn-devaio.hover-shadow(type='button') The Wizard
+			button.btn-info.character.btn-shadow.hover-shadow(type='button') The Rogue
 template(name="gameboard")
 	.game-area.row
 		.col-xs-2.character-display.col-xs-offset-1
@@ -117,13 +120,11 @@ template(name="item")
 
 template(name="profile")
 	h4 Username
-		p #{currentUser.username}
+		p #{username}
 	h4 Current Character
 		p.character-profile  #{character}
-	h4 Email
-		p Email: #{currentUser.emails.address}
-	h4 Role
-		p Site Role: #{currentUser.roles}
+	h4 Email: #{email}
+	h4 Role: #{currentUser.roles}
 	h4 Badges: #{currentUser.badges}
 
 template(name="submitTrivia")
@@ -145,6 +146,27 @@ template(name="submitTrivia")
 
 			input.btn.btn-primary.add(type="button", value="Add to Database")
 
-			input.new-trivia.test_val(type="text",placeholder="Please Test")
-			
-			input.btn.btn-warning.test-btn(type="button", value="Test")
+template(name="modals")
+	+charactersModal
+	+charactersItem
+	+profileModal
+	+profileItem
+	+submitModal
+	+submitItem
+	+aboutModal
+	+aboutItem
+	+adminModal
+	+adminItem
+	+monstersModal
+	+monstersItem
+//- template(name='projectImageModal')
+//- 	#projectImageModal.modal.fade.in.col-xs-12(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+//- 		.modal-dialog
+//- 			.modal-content
+//- 				.modal-header
+//- 					button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+//- 					h4.modal-title Big Image
+//- 				.modal-body
+//- 					+submitTrivia
+//- template(name='projectImageItem')
+//- 	input.open-modal(type='button',value='Show modal.')

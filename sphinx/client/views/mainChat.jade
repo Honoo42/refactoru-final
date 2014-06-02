@@ -3,15 +3,12 @@ head
 	link(rel="stylesheet",type="text/css",href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css")
 	link(rel="stylesheet",type="text/css",href=".../public/main.css")
 body
-	+revealChat
-	+mainBox
-	+leaderboard
+
 
 //- Main Chat Window
 template(name="mainBox")
 	.chat-container
 		h2 Chat with some Friends, #{currentUser.username}
-		+loginButtons
 		+chatBox
 //- Chat box with messages
 template(name="revealChat")
@@ -30,12 +27,6 @@ template(name='chatMessage')
 		b {{user}}:
 		| {{message}}
 	
-template(name='leaderboard')
-	.leaderboard
-		h1 These are your scores
-		ul
-			each scores
-				li #{monsters}
 
 template(name="user")
 	.user(class=selected)

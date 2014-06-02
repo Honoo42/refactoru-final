@@ -4,12 +4,56 @@
 
 // })
 
+if (Meteor.isClient) {
+    Template.submitItem.events = {
+        "click .open-modal" : function(e,t) {
+        e.preventDefault();
+        $("#submitModal").modal("show");
+        }
+    };
+    Template.charactersItem.events = {
+        "click .open-modal" : function(e,t) {
+        e.preventDefault();
+        $("#charactersModal").modal("show");
+        }
+    };
+    Template.aboutItem.events = {
+        "click .open-modal" : function(e,t) {
+        e.preventDefault();
+        $("#aboutModal").modal("show");
+        }
+    };
+    Template.profileItem.events = {
+        "click .open-modal" : function(e,t) {
+        e.preventDefault();
+        $("#profileModal").modal("show");
+        }
+    };
+    Template.adminItem.events = {
+        "click .open-modal" : function(e,t) {
+        e.preventDefault();
+        $("#adminModal").modal("show");
+        }
+    };
+    Template.monstersItem.events = {
+        "click .open-modal" : function(e,t) {
+        e.preventDefault();
+        $("#monstersModal").modal("show");
+        }
+    };
+}
 
 Template.profile.helpers({
   username: function() {return Meteor.user().username},
   character: function(){
     return Session.get('character')
-    }
+    },
+  email: function(){
+    return Meteor.user().emails[0].address
+  },
+  // badges: function(){
+  //   return Meteor.user().badges
+  // }
 });
 
 

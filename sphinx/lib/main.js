@@ -2,7 +2,7 @@
 var greet = function(name) {
     console.log("Hi. I'm " + name);
 }
-Scores = new Meteor.Collection('scores');
+// Scores = new Meteor.Collection('scores');
 Meteor.users.allow({
   insert: function(userId,doc){
     // console.log("Admin:",admin,"Meteor User:",Meteor.userId(),"userId:",userId)

@@ -1,0 +1,81 @@
+template(name='submitModal')
+	#submitModal.modal.fade.in.col-xs-12(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+		.modal-dialog
+			.modal-content
+				.modal-header
+					button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+					h4.modal-title Add new Trivia #{username}
+				.modal-body
+					+submitTrivia
+
+template(name='submitItem')
+	input.open-modal.submitItem(type='button',value='Triva Submit')
+
+template(name='monstersModal')
+	#monstersModal.modal.fade.in.col-xs-12(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+		.modal-dialog
+			.modal-content
+				.modal-header
+					button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+					h4.modal-title Monster
+				.modal-body
+					+monsters
+
+template(name='monstersItem')
+	input.open-modal.monstersItem(type='button',value='Monsters')
+
+
+
+
+template(name='charactersModal')
+	#charactersModal.modal.fade.in.col-xs-12(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+		.modal-dialog
+			.modal-content
+				.modal-header
+					button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+					h4.modal-title Character
+				.modal-body
+					+characters
+
+
+template(name='charactersItem')
+	input.open-modal.charactersItem(type='button',value='Characters')
+
+template(name='aboutModal')
+	#aboutModal.modal.fade.in.col-xs-12(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+		.modal-dialog
+			.modal-content
+				.modal-header
+					button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+					h4.modal-title About
+				.modal-body
+					+about
+
+template(name='aboutItem')
+	input.open-modal.aboutItem(type='button',value='About')
+
+template(name='profileModal')
+	#profileModal.modal.fade.in.col-xs-12(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+		.modal-dialog
+			.modal-content
+				.modal-header
+					button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+					h4.modal-title Profile Page
+				.modal-body
+					+profile
+
+template(name='profileItem')
+	input.open-modal.profileItem(type='button',value='Profile')
+
+template(name='adminModal')
+	#adminModal.modal.fade.in.col-xs-12(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+		.modal-dialog
+			.modal-content
+				.modal-header
+					button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+					h4.modal-title Admin Page
+				.modal-body
+					+admin
+
+template(name='adminItem')
+	input.open-modal.adminItem(type='button',value='Admin')
