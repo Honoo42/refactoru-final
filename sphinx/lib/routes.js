@@ -5,12 +5,12 @@ Router.onBeforeAction('loading');
 
 Router.map(function(){
 	// this.route('home',{path:'/'});
-	this.route('about');
-	this.route('characters');
-	this.route('monsters');
-	this.route('locations');
-	this.route('profile', {
-	    path:'/profile',
+	this.route('aboutModal');
+	this.route('charactersModal');
+	this.route('monstersModal');
+	// this.route('locationModal');
+	this.route('profileModal', {
+	    path:'/profileModal',
 	    data: function() {return Meteor.user();}
 	});
 
@@ -27,7 +27,7 @@ Router.map(function(){
 		}
 	});
 	// creates the page for the admin to view all users
-	this.route('admin', {
+	this.route('adminModal', {
         path:'/admin',
         template: 'accountsAdmin',
         onBeforeAction: function() {
@@ -41,7 +41,7 @@ Router.map(function(){
     });	
     // creates a route to a form to submit new trivia questions to the database
     // that is only accessible by being logged in with an admin account
-    this.route('trivia', {
+    this.route('submitModal', {
     	path:'/submit_trivia',
     	template: 'submitTrivia',
     	onBeforeAction: function() {

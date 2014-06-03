@@ -39,13 +39,13 @@ template(name='header')
 		
 template(name='navbar')
 	ul.nav.nav-pills.list-group
-		li.list-group-item: a(href="{{pathFor 'characters'}}") Character Info
-		li.list-group-item: a(href="{{pathFor 'monsters'}}") Monsters
-		li.list-group-item: a(href="{{pathFor 'locations'}}") Locations
-		li.list-group-item: a(href="{{pathFor 'about'}}") About
-		li.list-group-item: a(href="{{pathFor 'profile'}}") Profile
-		li.list-group-item: a(href="{{pathFor 'admin'}}") Admin Page
-		li.list-group-item: a(href="{{pathFor 'trivia'}}") Trivia Insertion
+		li.list-group-item.charModal: a(href="{{pathFor 'charactersModal'}}") Character Info
+		li.list-group-item.monModal: a(href="{{pathFor 'monstersModal'}}") Monsters
+		//- li.list-group-item.locModal: a(href="{{pathFor 'locationModal'}}") Locations
+		li.list-group-item.aboModal: a(href="{{pathFor 'aboutModal'}}") About
+		li.list-group-item.proModal: a(href="{{pathFor 'profileModal'}}") Profile
+		li.list-group-item.adModal: a(href="{{pathFor 'adminModal'}}") Admin Page
+		li.list-group-item.subModal: a(href="{{pathFor 'submitModal'}}") Trivia Insertion
 
 
 
@@ -159,6 +159,8 @@ template(name="modals")
 	+adminItem
 	+monstersModal
 	+monstersItem
+	//- +locationModal
+	//- +locationItem
 //- template(name='projectImageModal')
 //- 	#projectImageModal.modal.fade.in.col-xs-12(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
 //- 		.modal-dialog

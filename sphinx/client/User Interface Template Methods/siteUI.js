@@ -17,6 +17,7 @@ if (Meteor.isClient) {
         $("#charactersModal").modal("show");
         }
     };
+   
     Template.aboutItem.events = {
         "click .open-modal" : function(e,t) {
         e.preventDefault();
@@ -41,6 +42,73 @@ if (Meteor.isClient) {
         $("#monstersModal").modal("show");
         }
     };
+    Template.navbar.events = {
+        "click .charModal" : function(e,t) {
+        e.preventDefault();
+        $("#charactersModal").modal("show");
+        },
+        "click .monModal" : function(e,t) {
+        e.preventDefault();
+        $("#monstersModal").modal("show");
+        },
+         "click .proModal" : function(e,t) {
+        e.preventDefault();
+        $("#profileModal").modal("show");
+        },
+        "click .adModal" : function(e,t) {
+        e.preventDefault();
+        $("#adminModal").modal("show");
+        },
+        "click .subModal" : function(e,t) {
+        e.preventDefault();
+        $("#submitModal").modal("show");
+        },
+    //     // "click .locModal" : function(e,t) {
+    //     // e.preventDefault();
+    //     // $("#locationModal").modal("show");
+    //     // },
+        "click .aboModal" : function(e,t) {
+        e.preventDefault();
+        $("#aboutModal").modal("show");
+        }
+    };
+    //   Template.navbar.events = {
+    //     "click .monModal" : function(e,t) {
+    //     e.preventDefault();
+    //     $("#monstersModal").modal("show");
+    //     },
+
+    // };
+    //   Template.navbar.events = {
+    //     "click .proModal" : function(e,t) {
+    //     e.preventDefault();
+    //     $("#profileModal").modal("show");
+    //     }
+    // };
+    //   Template.navbar.events = {
+    //     "click .adModal" : function(e,t) {
+    //     e.preventDefault();
+    //     $("#adminModal").modal("show");
+    //     }
+    // };
+    //   Template.navbar.events = {
+    //     "click .trivModal" : function(e,t) {
+    //     e.preventDefault();
+    //     $("#triviaModal").modal("show");
+    //     }
+    // };
+    //   Template.navbar.events = {
+    //     "click .locModal" : function(e,t) {
+    //     e.preventDefault();
+    //     $("#locationModal").modal("show");
+    //     }
+    // };
+    //   Template.navbar.events = {
+    //     "click .aboModal" : function(e,t) {
+    //     e.preventDefault();
+    //     $("#aboutModal").modal("show");
+    //     }
+    // };
 }
 
 Template.profile.helpers({

@@ -96,27 +96,27 @@ Template.home.events({
   },  
 });
 
-//Events for the game template
-Template.game.events({
-  //Defining click for move buttons
-  'click .gamebutton': function(e){
-    Meteor.call('setMove',this._id,e.currentTarget.id);
-    deleteInterval();  
-    Session.set('current_interval', Meteor.setInterval(checkGame,4000));          
-  },
-  //Defining click for end game button
-  'click #end_game': function(){
-    deleteInterval();
-    Meteor.call('setCurrentGame',null);
-    Session.set('current_game', null);
-    Meteor.call('endGame',this._id);
-    Router.go('/');
-  },
-  //Defining click for back home button
-  'click #back_home': function(){
-    deleteInterval();
-    Meteor.call('setCurrentGame',null);
-    Session.set('current_game', null);    
-    Router.go('/');
-  }
-});
+// //Events for the game template
+// Template.game.events({
+//   //Defining click for move buttons
+//   'click .gamebutton': function(e){
+//     Meteor.call('setMove',this._id,e.currentTarget.id);
+//     deleteInterval();  
+//     Session.set('current_interval', Meteor.setInterval(checkGame,4000));          
+//   },
+//   //Defining click for end game button
+//   'click #end_game': function(){
+//     deleteInterval();
+//     Meteor.call('setCurrentGame',null);
+//     Session.set('current_game', null);
+//     Meteor.call('endGame',this._id);
+//     Router.go('/');
+//   },
+//   //Defining click for back home button
+//   'click #back_home': function(){
+//     deleteInterval();
+//     Meteor.call('setCurrentGame',null);
+//     Session.set('current_game', null);    
+//     Router.go('/');
+//   }
+// });
