@@ -4,6 +4,7 @@
   color: #FFEE7D;
   margin: -2% 0% 0% 0%;
   padding: .6em;
+  opacity: .8;
 }
 .user-display{
 	text-align: right;
@@ -142,6 +143,21 @@
   background-image: url(https://s3.amazonaws.com/giphymedia/media/Xcd5feHBswzDy/giphy.gif);
 }
 
+#reveal-chat{
+  background: -webkit-linear-gradient(#B8A16F, #FAEBD7);
+  color: black; 
+}
+.chat-container{
+  /*border: 2px firebrick solid;*/
+  box-shadow: 10px 10px 5px #888888;
+  color: #6F88B8;
+  width: 40%;
+  background: -webkit-linear-gradient(#B8A16F, #FAEBD7);
+  font-style: Osaka; 
+}
+.user-reference{
+  color: #2B426B;
+}
 /*Answer Buttons*/
 
 .answer-btn {

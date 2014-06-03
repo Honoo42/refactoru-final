@@ -188,6 +188,10 @@ for (var i = 0; i < collectionData.length; i++) {
 	TriviaCollection.insert(collectionData[i])
 };
 
+Meteor.publish('triviaQuestions',function(){
+	return TriviaCollection.find();
+})
+
 TriviaCollection.allow({
   insert: function(userId,doc){
   	var admin = 'RR4yMYFGzNpXs5C68'

@@ -59,8 +59,6 @@ Meteor.myFunctions ={
 			console.log(currentMonster)
 		},
 		startEncounter : function (){
-			
-			console.log(Meteor.user())
 			currentThreat = firstLevel[0];			
 				 if (currentThreat.health <= 0) 
 					{

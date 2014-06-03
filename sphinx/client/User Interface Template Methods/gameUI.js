@@ -9,6 +9,10 @@ if (Meteor.isClient) {
 
   })
 };
+// Meteor.subscribe('triviaQuestions',function(){
+//   var trivia = TriviaCollection.find();
+//   console.log(trivia);
+// })
 // Template.buttons.helpers({
 //   "startGameHide" : function(){
 //     $('.character').hide();
@@ -49,10 +53,14 @@ Template.buttons.events({
     Session.set("character","You are playing as Shadow");
   },
   "click .generate": function(){
-    var array = TriviaCollection.find().fetch();
+    
+    Meteor.subscribe('monsters',function(){
+    var array = MonsterGroup.find().fetch();
     var randomIndex = Math.floor( Math.random() * array.length );
     var element = array[randomIndex];
-    console.log(array);
+    console.log(element); 
+      
+    })
     var placeArea = $('.placement');
     // console.log("Hey this is before the encounter")
     // console.log(Meteor.myFunctions.pickAMonster());

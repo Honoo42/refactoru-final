@@ -4,7 +4,14 @@ if (Meteor.isServer) {
         if (Meteor.users.findOne("RR4yMYFGzNpXs5C68"))
             Roles.addUsersToRoles("RR4yMYFGzNpXs5C68", ['admin']);
 
+
         // create a couple of roles if they don't already exist (THESE ARE NOT NEEDED -- just for the demo)
+        if(!Meteor.roles.findOne({name: "player"}))
+            Roles.createRole("player");
+
+        // if(Meteor.users.find(this.user)
+        //     Roles.addUsersToRoles(':_id',['player']);
+
         if(!Meteor.roles.findOne({name: "secret"}))
             Roles.createRole("secret");
 
