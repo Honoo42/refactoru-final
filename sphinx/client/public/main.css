@@ -87,7 +87,60 @@
   text-align: center;
 };
 
-
+#login-name-link{
+  text-align: right;
+  color: firebrick;
+  background-color: thistle;
+}
+/*Modal Styling*/
+#adminModal{
+  background-repeat: repeat-y;
+  background-size: 100% 100%;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-image: url(http://opengameart.org/sites/default/files/city_background_night.png);
+}
+#charactersModal{
+  background-repeat: repeat-y;
+  background-size: 100% 100%;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-image: url(https://s3.amazonaws.com/giphymedia/media/Z9cWAILTMuE1O/giphy.gif) ;
+}
+#monstersModal{
+  background-repeat: repeat-y;
+  background-size: 100% 100%;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-image: url(https://s3.amazonaws.com/giphymedia/media/APhlKhhEdkUxO/200.gif);
+}
+#aboutModal{
+  background-repeat: repeat-y;
+  background-size: 100% 100%;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-image: url(http://opengameart.org/sites/default/files/city_background_night.png);
+}
+#profileModal{
+  background-repeat: repeat-y;
+  background-size: 100% 100%;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-image: url(http://opengameart.org/sites/default/files/city_background_night.png);
+}
+#submitModal{
+  background-repeat: repeat-y;
+  background-size: 100% 100%;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-image: url(https://s3.amazonaws.com/giphymedia/media/Xcd5feHBswzDy/giphy.gif);
+}
 
 /*Answer Buttons*/
 
