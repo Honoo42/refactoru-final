@@ -49,6 +49,10 @@ Template.buttons.events({
     Session.set("character","You are playing as Shadow");
   },
   "click .generate": function(){
+    var array = TriviaCollection.find().fetch();
+    var randomIndex = Math.floor( Math.random() * array.length );
+    var element = array[randomIndex];
+    console.log(array);
     var placeArea = $('.placement');
     // console.log("Hey this is before the encounter")
     // console.log(Meteor.myFunctions.pickAMonster());

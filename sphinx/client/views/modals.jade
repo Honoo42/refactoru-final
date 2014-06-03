@@ -9,7 +9,7 @@ template(name='submitModal')
 					+submitTrivia
 
 template(name='submitItem')
-	input.open-modal.submitItem(type='button',value='Triva Submit')
+	input.open-modal.submitItem.hidden(type='button',value='Triva Submit')
 
 template(name='monstersModal')
 	#monstersModal.modal.fade.in.col-xs-12(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
@@ -22,7 +22,7 @@ template(name='monstersModal')
 					+monsters
 
 template(name='monstersItem')
-	input.open-modal.monstersItem(type='button',value='Monsters')
+	input.open-modal.monstersItem.hidden(type='button',value='Monsters')
 
 
 
@@ -39,7 +39,7 @@ template(name='charactersModal')
 
 
 template(name='charactersItem')
-	input.open-modal.charactersItem(type='button',value='Characters')
+	input.open-modal.charactersItem.hidden(type='button',value='Characters')
 
 template(name='aboutModal')
 	#aboutModal.modal.fade.in.col-xs-12(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
@@ -52,7 +52,7 @@ template(name='aboutModal')
 					+about
 
 template(name='aboutItem')
-	input.open-modal.aboutItem(type='button',value='About')
+	input.open-modal.aboutItem.hidden(type='button',value='About')
 
 template(name='profileModal')
 	#profileModal.modal.fade.in.col-xs-12(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
@@ -65,7 +65,7 @@ template(name='profileModal')
 					+profile
 
 template(name='profileItem')
-	input.open-modal.profileItem(type='button',value='Profile')
+	input.open-modal.profileItem.hidden(type='button',value='Profile')
 
 template(name='adminModal')
 	#adminModal.modal.fade.in.col-xs-12(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
@@ -78,7 +78,7 @@ template(name='adminModal')
 					+admin
 
 template(name='adminItem')
-	input.open-modal.adminItem(type='button',value='Admin')
+	input.open-modal.adminItem.hidden(type='button',value='Admin')
 
 //- template(name='locationModal')
 //- 	#locationModal.modal.fade.in.col-xs-12(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')

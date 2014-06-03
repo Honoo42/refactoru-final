@@ -12,23 +12,9 @@ Meteor.users.allow({
     return Meteor.userId() === userId;
   }
 })
-// 				if (Meteor.isClient) {
-// 	Template.leaderboard.events({
-// 		scores: function(){
-// 			if (currentMonster.health <= 0) {
-// 				console.log("Leaderboard Start")
-// 				Scores.insert({
-// 					'monster':currentMonster.name,
-// 					'count': 1+
-// 				})
 
-// 			}
-// 			console.log("Leaderboard End")
 
-// 		}
-// 	})
 
-// };
 if (Meteor.isServer) {
 
 };

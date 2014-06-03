@@ -1,4 +1,11 @@
+Meteor.startup(function(){
+     $('.character').hide();
+    $('.generate').hide();
+    $('.reset-game').hide();
+    var placeArea = $('.placement');
+   
 
+})
 
 // Template.leaderboard.event({
 
@@ -72,43 +79,7 @@ if (Meteor.isClient) {
         $("#aboutModal").modal("show");
         }
     };
-    //   Template.navbar.events = {
-    //     "click .monModal" : function(e,t) {
-    //     e.preventDefault();
-    //     $("#monstersModal").modal("show");
-    //     },
-
-    // };
-    //   Template.navbar.events = {
-    //     "click .proModal" : function(e,t) {
-    //     e.preventDefault();
-    //     $("#profileModal").modal("show");
-    //     }
-    // };
-    //   Template.navbar.events = {
-    //     "click .adModal" : function(e,t) {
-    //     e.preventDefault();
-    //     $("#adminModal").modal("show");
-    //     }
-    // };
-    //   Template.navbar.events = {
-    //     "click .trivModal" : function(e,t) {
-    //     e.preventDefault();
-    //     $("#triviaModal").modal("show");
-    //     }
-    // };
-    //   Template.navbar.events = {
-    //     "click .locModal" : function(e,t) {
-    //     e.preventDefault();
-    //     $("#locationModal").modal("show");
-    //     }
-    // };
-    //   Template.navbar.events = {
-    //     "click .aboModal" : function(e,t) {
-    //     e.preventDefault();
-    //     $("#aboutModal").modal("show");
-    //     }
-    // };
+   
 }
 
 Template.profile.helpers({
@@ -119,6 +90,9 @@ Template.profile.helpers({
   email: function(){
     return Meteor.user().emails[0].address
   },
+  monsters: function(){
+    return Meteor.user().monstersDefeated
+  }
   // badges: function(){
   //   return Meteor.user().badges
   // }
