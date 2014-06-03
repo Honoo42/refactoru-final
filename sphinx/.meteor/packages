@@ -6,8 +6,6 @@
 standard-app-packages
 accounts-ui
 accounts-password
-bootstrap
-moment
 font-awesome
 jade
 streams
@@ -21,3 +19,4 @@ oauth
 accounts-github
 google
 accounts-google
+presence

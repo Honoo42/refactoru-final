@@ -13,6 +13,18 @@ Meteor.publish(null, function() {
 Meteor.publish('singleUser', function(userId) {
        return Meteor.users.find(userId);
     });
+
+Meteor.publish('userPresence', function() {
+  // Setup some filter to find the users your user
+  // cares about. It's unlikely that you want to publish the 
+  // presences of _all_ the users in the system.
+
+  // If for example we wanted to publish only logged in users we could apply:
+  // filter = { userId: { $exists: true }};
+  var filter = {}; 
+  
+  return Presences.find(filter, {fields: {state: true, userId: true}});
+});
 // On account creation, checks to see if another account with the same email exists
 // If it does, it merges the two accounts together
 Accounts.onCreateUser (function(options,user) {

@@ -1,6 +1,5 @@
 {
   "packages": {
-    "moment": {},
     "font-awesome": {},
     "jade": {},
     "streams": {},
@@ -8,6 +7,7 @@
     "collection-behaviours": {},
     "iron-router": {},
     "roles": {},
-    "accounts-admin-ui-bootstrap-3": {}
+    "accounts-admin-ui-bootstrap-3": {},
+    "presence": {}
   }
 }
