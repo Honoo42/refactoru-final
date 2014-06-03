@@ -29,8 +29,12 @@
 /*CSS Related to the Game Area of The Game*/
 
 .play {
-  background-color: black;
+  /*background-color: #B0C4DE;*/
+  background: -webkit-linear-gradient(#B0C4DE, #00BFFF);
+  /*background-image: url(http://media0.giphy.com/media/87tkMovdHMRk4/200.gif);*/
   border-radius: 20px;
+  border: gainboro 4px;
+  border-style: groove;
 
 }
 /*#00BCFF,  */
@@ -39,10 +43,12 @@
   font-weight: 900;
   color: white;
   border-radius: 0% 25% 20% 20%;
+  border: gainboro 4px;
+  border-style: groove;
 }
 
 .question-area {
-  color: peachpuff;
+  color: #25277B;
 }
 
 .play-area {
@@ -69,6 +75,8 @@
   font-weight: 900;
   color: black;
   border-radius: 20% 0% 25% 20%;
+  border: gainboro 4px;
+  border-style: groove;
 }
 .leaderboard{
 	text-align: right;
@@ -168,23 +176,31 @@
 }
 
 .answer1 {
-  background-color: #B2441F;
-  color: #38B297;
+  /*background-color: #B2441F;*/
+  color: #68624C;
+  background: -webkit-linear-gradient(#FAFDEE, #A0BDAC);
+
 }
 
 .answer2 {
-  background-color: #FFFBD5;
-  color: #5938B2;
+  /*background-color: #FFFBD5;*/
+  color: black;
+  background: -webkit-linear-gradient(#FFF0F5, #DCDCDC);
+
 }
 
 .answer3 {
-  background-color: #B20065;
-  color: #FF5BB7;
+  /*background-color: #B20065;*/
+  color: #98FB98;
+  background: -webkit-linear-gradient(#4676B2, #4355AD);
+
 }
 
 .answer4 {
-  background-color: #7BCC2B;
+  /*background-color: #7BCC2B;*/
   color: #FFF65B;
+  background: -webkit-linear-gradient(#FAEBD7, #B8A16F);
+
 }
 
 /*.correct {
