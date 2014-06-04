@@ -73,10 +73,15 @@ chatStream.on('chat', function(message) {
     message: message
   });
 });
+Template.leaderboard.helpers({
+  users:function(){
+    return Meteor.users.find({},{sort:{monstersDefeated:-1}});
+  },
+  status:function(){
+    return Meteor.user().status.online
+  }
+})
 
-// Template.leaderboard.users(function() { 
-//   return Meteor.users.find(); 
-// })
 // Template.leaderboard.presence(function() { 
 //   return Meteor.presences.findOne({userId: this._id}); 
 // })

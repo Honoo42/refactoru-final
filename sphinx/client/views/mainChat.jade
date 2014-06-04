@@ -33,13 +33,16 @@ template(name='chatMessage')
 //- 		span.name=  name
 //- 		span.score= score
 
-//- template(name="leaderboard")
-//- 	each users
-//- 		user
-//- 		if presence
-//- 			is Online!
-//- 		else
-//- 			is not online..
+template(name="leaderboard")
+	h1 Active Players
+	each users
+		if status = true
+			li #{username}: #{monstersDefeated}
+
+		//- if user.status.online
+		//- 	p Online!
+		//- else
+		//- 	p not online..
 
 
 
