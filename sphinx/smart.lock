@@ -10,7 +10,7 @@
       "iron-router": {},
       "roles": {},
       "accounts-admin-ui-bootstrap-3": {},
-      "presence": {}
+      "user-status": {}
     },
     "packages": {
       "font-awesome": {
@@ -53,10 +53,10 @@
         "tag": "v0.2.5",
         "commit": "381d4ca347f16d2ca2e1e6ca5f51c3f2e9c6c5cd"
       },
-      "presence": {
-        "git": "https://github.com/dburles/meteor-presence.git",
-        "tag": "v0.4.6",
-        "commit": "7acef78e008bf967c9b2e831c968a6618a92a90a"
+      "user-status": {
+        "git": "https://github.com/mizzao/meteor-user-status.git",
+        "tag": "v0.4.1",
+        "commit": "ccca026086e3aa6e44df066c9d5fe4bd412219fc"
       },
       "collection-hooks": {
         "git": "https://github.com/matb33/meteor-collection-hooks.git",
@@ -72,6 +72,11 @@
         "git": "https://github.com/mangasocial/meteor-bootstrap-3.git",
         "tag": "v3.1.1-1",
         "commit": "63dd38968828bb8963636df93e9a1c45e2dfe67e"
+      },
+      "timesync": {
+        "git": "https://github.com/mizzao/meteor-timesync.git",
+        "tag": "v0.1.6",
+        "commit": "83067433f511bc13a11ae8c87e9a4d331256915e"
       }
     }
   }

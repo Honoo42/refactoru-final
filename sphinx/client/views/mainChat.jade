@@ -28,7 +28,21 @@ template(name='chatMessage')
 		| {{message}}
 	
 
-template(name="user")
-	.user(class=selected)
-		span.name=  name
-		span.score= score
+//- template(name="user")
+//- 	.user(class=selected)
+//- 		span.name=  name
+//- 		span.score= score
+
+//- template(name="leaderboard")
+//- 	each users
+//- 		user
+//- 		if presence
+//- 			is Online!
+//- 		else
+//- 			is not online..
+
+
+
+
+
+	//- Meteor.presences.find().count() 

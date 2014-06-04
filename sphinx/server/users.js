@@ -1,5 +1,16 @@
+// The user-status package allows me to check
+// the status of accounts to see when they are logged
+// in and the last time they logged in
 Meteor.publish("user-info", function(id) {
-  return Meteor.users.find({_id: id}, {fields: {username: 1}});
+  return Meteor.users.find(
+    {_id: id}, 
+    {fields: 
+      {username: 1,
+      online: 1,
+      lastlogin: 1
+    }
+
+  });
 });
 Meteor.publish(null, function() {
     
@@ -22,7 +33,7 @@ Meteor.publish('userPresence', function() {
   // If for example we wanted to publish only logged in users we could apply:
   // filter = { userId: { $exists: true }};
   var filter = {}; 
-  
+
   return Presences.find(filter, {fields: {state: true, userId: true}});
 });
 // On account creation, checks to see if another account with the same email exists

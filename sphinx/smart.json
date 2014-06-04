@@ -8,6 +8,6 @@
     "iron-router": {},
     "roles": {},
     "accounts-admin-ui-bootstrap-3": {},
-    "presence": {}
+    "user-status": {}
   }
 }
