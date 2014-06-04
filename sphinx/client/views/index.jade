@@ -10,10 +10,6 @@ body
 	.background
 	+header
 	+loginButtons
-	if currentUser
-		+currentUser
-	else
-		+visitor
 	+navbar
 	+modals
 	+buttons
@@ -21,7 +17,6 @@ body
 	+revealChat
 	+mainBox
 	+leaderboard
-	
 
 
 
@@ -39,6 +34,10 @@ template(name='header')
 		h1
 			| Welcome to SPHINX
 			small The Trivia RPG Work-In-Progress
+			if currentUser
+				+currentUser
+			else
+				+visitor
 		
 template(name='navbar')
 	ul.nav.nav-pills.list-group
@@ -118,8 +117,21 @@ template(name="locations")
 		button.btn.btn-warning.game-info Close This Field
 		p Forest of Tymierl
 template(name="home")
+	+container
+	.background
+	+header
+	+loginButtons(align='right')
+	if currentUser
+		+currentUser
+	else
+		+visitor
+	+navbar
+	+modals
 	+buttons
 	+gameboard
+	+revealChat
+	+mainBox
+	+leaderboard
 
 template(name="admin")
 	if isAdminUser
@@ -132,7 +144,7 @@ template(name="admin")
 template(name="user_profile")
 	h1 Hello World Sean!
 	h4 Username
-		p #{.username}
+		p #{username}
 	h4 Current Character
 		p #{character}
 		p #{currentCharacter}
@@ -142,13 +154,12 @@ template(name="item")
 
 template(name="profile")
 	h4 Username
-		p #{username}
+		p #{currentUser.username}
 	h4 Current Character
 		p.character-profile  #{character}
-	h4 Email: #{email}
 	h4 Role: #{currentUser.roles}
 	h4 Badges: #{currentUser.badges}
-	h4 # of Monsters Defeated: #{monsters}
+	h4 # of Monsters Defeated: #{currentUser.monstersDefeated}
 	each user
 		a(href="{{pathFor 'user_profile'}}") Accounts
 

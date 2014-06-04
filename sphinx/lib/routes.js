@@ -13,19 +13,19 @@ Router.map(function(){
 	    path:'/profileModal',
 	    data: function() {return Meteor.user();}
 	});
-
-	this.route('user_profile', {
-		path: '/users/:_id',
-		waitOn: function() {
-		        return Meteor.subscribe('singleUser', this.params._id);
-		},
-		data: function() { 
-			    var findById = Meteor.users.findOne(this.params._id);
-			    if (typeof findById !== "undefined") {
-			 Router.go(getProfileUrlById(findById),  {replaceState: true});
-			    }
-		}
-	});
+// Finding other profiles, implement later
+	// this.route('user_profile', {
+	// 	path: '/users/:_id',
+	// 	waitOn: function() {
+	// 	        return Meteor.subscribe('singleUser', this.params._id);
+	// 	},
+	// 	data: function() { 
+	// 		    var findById = Meteor.users.findOne(this.params._id);
+	// 		    if (typeof findById !== "undefined") {
+	// 		 Router.go(getProfileUrlById(findById),  {replaceState: true});
+	// 		    }
+	// 	}
+	// });
 	// creates the page for the admin to view all users
 	this.route('adminModal', {
         path:'/admin',

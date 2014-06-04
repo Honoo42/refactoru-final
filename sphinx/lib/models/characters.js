@@ -1,10 +1,10 @@
-CharacterSelect = new Meteor.Collection('characters')
+// CharacterSelect = new Meteor.Collection('characters')
 
-var characterData = [
-	{	'name': 'Kanir',
+// var characterData = [
+// 	{	'name': 'Kanir',
 		
 
-	}
+// 	}
 
 
-]
+// ]

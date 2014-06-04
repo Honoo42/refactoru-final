@@ -3,6 +3,27 @@ Meteor.startup(function(){
     $('.generate').hide();
     $('.reset-game').hide();
     var placeArea = $('.placement');
+
+  Template.profile.helpers({
+  username: function() {
+    Session.set('user', Meteor.user().username);
+    return Session.get('user')
+  },
+  character: function(){
+    return Session.get('character')
+  },
+  email: function(){
+    Session.set('email',Meteor.user().emails[0].address)
+    return Session.get('email')
+  },
+  monsters: function(){
+    return Meteor.user().monstersDefeated
+  }
+  // badges: function(){
+  //   return Meteor.user().badges
+  // }
+});
+
    
 
 })
@@ -82,23 +103,6 @@ if (Meteor.isClient) {
    
 }
 
-Template.profile.helpers({
-  username: function() {return Meteor.user().username},
-  character: function(){
-    return Session.get('character')
-    },
-  email: function(){
-    return Meteor.user().emails[0].address
-  },
-  monsters: function(){
-    return Meteor.user().monstersDefeated
-  }
-  // badges: function(){
-  //   return Meteor.user().badges
-  // }
-});
-
-
 
 Template.user_profile.helpers({
   username: function() {return Meteor.user().username},
@@ -151,4 +155,21 @@ Template.submitTrivia.events({
   }
 
 
+});
+  Template.profile.helpers({
+  username: function() {
+    return Session.get('user')
+  },
+  character: function(){
+    return Session.get('character')
+  },
+  email: function(){
+    return Session.get('email')
+  },
+  monsters: function(){
+    return Session.get('monstersDefeated')
+  }
+  // badges: function(){
+  //   return Meteor.user().badges
+  // }
 });

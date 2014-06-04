@@ -1,41 +1,39 @@
 // The user-status package allows me to check
 // the status of accounts to see when they are logged
 // in and the last time they logged in
-Meteor.publish("user-info", function(id) {
-  return Meteor.users.find(
-    {_id: id}, 
+Meteor.publish("user-info", function() {
+  console.log(this.userId)
+  if(!this.userId){
+    console.log("HELLO!!!")
+    return null
+  }
+  if (!!this.userId) {
+    return Meteor.users.find(
+    {}, 
     {fields: 
       {username: 1,
       online: 1,
-      lastlogin: 1
+      lastlogin: 1,
+      monstersDefeated: 1
     }
 
-  });
-});
-Meteor.publish(null, function() {
-    
-    //returns undefined if not logged in so check if logged in first
-    if(this.userId) {
-        var user = Meteor.users.findOne(this.userId);
-        //var user is the same info as would be given in Meteor.user();
-    }
-});
-// allows users to see eachother's profiles
-Meteor.publish('singleUser', function(userId) {
-       return Meteor.users.find(userId);
     });
-
-Meteor.publish('userPresence', function() {
-  // Setup some filter to find the users your user
-  // cares about. It's unlikely that you want to publish the 
-  // presences of _all_ the users in the system.
-
-  // If for example we wanted to publish only logged in users we could apply:
-  // filter = { userId: { $exists: true }};
-  var filter = {}; 
-
-  return Presences.find(filter, {fields: {state: true, userId: true}});
+  }
+  
 });
+// Meteor.publish(null, function() {
+    
+//     //returns undefined if not logged in so check if logged in first
+//     if(this.userId) {
+//         var user = Meteor.users.findOne(this.userId);
+//         //var user is the same info as would be given in Meteor.user();
+//     }
+// });
+// // allows users to see eachother's profiles
+// Meteor.publish('singleUser', function(userId) {
+//        return Meteor.users.find(userId);
+//     });
+
 // On account creation, checks to see if another account with the same email exists
 // If it does, it merges the two accounts together
 Accounts.onCreateUser (function(options,user) {

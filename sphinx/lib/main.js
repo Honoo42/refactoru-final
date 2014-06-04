@@ -1,3 +1,4 @@
+
 // This function is available on both the client and the server.
 var greet = function(name) {
     console.log("Hi. I'm " + name);

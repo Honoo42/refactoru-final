@@ -9,6 +9,8 @@ if (Meteor.isClient) {
 
   })
 };
+
+
 // Meteor.subscribe('triviaQuestions',function(){
 //   var trivia = TriviaCollection.find();
 //   console.log(trivia);

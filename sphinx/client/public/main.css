@@ -212,6 +212,15 @@
   opacity: .4;
 }*/
 
+.leaderboard-format{
+  width: 20%;
+  border: 2px;
+  border-style: groove;
+  color: #5982AF;
+  font-style: underline;
+  background: -webkit-linear-gradient(#FF584D, #80312C)
+}
+
 .background {
   position: fixed;
   height: 100%;

@@ -17,6 +17,8 @@ if (Meteor.isServer) {
 
         if(!Meteor.roles.findOne({name: "double-secret"}))
             Roles.createRole("double-secret");
+
+        
     });
 }
 
@@ -27,4 +29,7 @@ if (Meteor.isClient) {
             return Roles.userIsInRole(Meteor.user(), ['admin']);
         }
     })
+
 }
+
+
