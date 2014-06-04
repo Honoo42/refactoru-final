@@ -2,9 +2,9 @@
 // the status of accounts to see when they are logged
 // in and the last time they logged in
 Meteor.publish("user-info", function() {
-  console.log(this.userId)
+  // console.log(this.userId)
   if(!this.userId){
-    console.log("HELLO!!!")
+    // console.log("HELLO!!!")
     return null
   }
   if (!!this.userId) {
@@ -21,18 +21,18 @@ Meteor.publish("user-info", function() {
   }
   
 });
-// Meteor.publish(null, function() {
+Meteor.publish(null, function() {
     
-//     //returns undefined if not logged in so check if logged in first
-//     if(this.userId) {
-//         var user = Meteor.users.findOne(this.userId);
-//         //var user is the same info as would be given in Meteor.user();
-//     }
-// });
-// // allows users to see eachother's profiles
-// Meteor.publish('singleUser', function(userId) {
-//        return Meteor.users.find(userId);
-//     });
+    //returns undefined if not logged in so check if logged in first
+    if(this.userId) {
+        var user = Meteor.users.findOne(this.userId);
+        //var user is the same info as would be given in Meteor.user();
+    }
+});
+// allows users to see eachother's profiles
+Meteor.publish('singleUser', function(userId) {
+       return Meteor.users.find(userId);
+    });
 
 // On account creation, checks to see if another account with the same email exists
 // If it does, it merges the two accounts together

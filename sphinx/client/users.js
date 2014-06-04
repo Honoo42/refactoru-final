@@ -8,15 +8,15 @@ Accounts.ui.config({
   passwordSignupFields: "USERNAME_AND_EMAIL"
 });
 // Finding other profiles, implement later
-// getUsername = function(id) {
-//   Meteor.subscribe('user-info', id);
-//   Deps.autorun(function() {
-//     var user = Meteor.users.findOne(id);
-//     if(user) {
-//       Session.set('user-' + id, user.username);
-//     }
-//   });
-// }
+getUsername = function(id) {
+  Meteor.subscribe('user-info', id);
+  Deps.autorun(function() {
+    var user = Meteor.users.findOne(id);
+    if(user) {
+      Session.set('user-' + id, user.username);
+    }
+  });
+}
 Deps.autorun(function(){
   Meteor.subscribe('user-info');
 })

@@ -37,13 +37,13 @@ for (var i = 0; i < monsterCollection.length; i++) {
 // 	return MonsterGroup.find();
 // })
 
-// MonsterGroup.allow({
-//   insert: function(userId,doc){
-//   	var admin = 'RR4yMYFGzNpXs5C68'
-//     // console.log("Admin:",admin,"Meteor User:",Meteor.userId(),"userId:",userId)
-//     return (Meteor.userId() === admin);
-//   },
-//   update: function(admin,doc,fields,modifier){
-//     return Meteor.userId() === admin;
-//   }
-// })
+MonsterGroup.allow({
+  insert: function(userId,doc){
+  	var admin = 'RR4yMYFGzNpXs5C68'
+    // console.log("Admin:",admin,"Meteor User:",Meteor.userId(),"userId:",userId)
+    return (Meteor.userId() === admin);
+  },
+  update: function(admin,doc,fields,modifier){
+    return Meteor.userId() === admin;
+  }
+})
