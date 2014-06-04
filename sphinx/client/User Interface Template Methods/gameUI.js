@@ -1,9 +1,10 @@
 // ---------------------Game Functionality------------
 if (Meteor.isClient) {
      Meteor.startup(function(){
-     $('.character').hide();
+    $('.character').hide();
     $('.generate').hide();
     $('.reset-game').hide();
+    $('.game-area').hide();
     var placeArea = $('.placement');
    
 
@@ -64,6 +65,7 @@ Template.buttons.events({
       
     })
     var placeArea = $('.placement');
+    $('.game-area').show();
     // console.log("Hey this is before the encounter")
     // console.log(Meteor.myFunctions.pickAMonster());
     $('.placement').append(Meteor.myFunctions.startEncounter());
@@ -76,6 +78,7 @@ Template.buttons.events({
     $('.generate').hide();
     $('.reset-game').hide();
     $('.start-game').show();
+    $('.game-area').hide();
     Session.set("character","");
   },
 

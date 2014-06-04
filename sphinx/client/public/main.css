@@ -46,6 +46,7 @@
   border-radius: 0% 25% 20% 20%;
   border: gainboro 4px;
   border-style: groove;
+  margin-right: 0.4%;
 }
 
 
@@ -71,6 +72,9 @@
   font-weight: 800;
   font-size: 2em;
 }
+.game-area{
+  margin-top: 0.4%;
+}
 .encounter-string{
   /*background: -webkit-linear-gradient(#FF584D, #80312C);*/
   background: -webkit-linear-gradient(#4676B2, #4355AD);
@@ -80,6 +84,7 @@
   border-radius: 20% 0% 25% 20%;
   border: gainboro 4px;
   border-style: groove;
+  margin-left: 0.4%;
 }
 .leaderboard{
 	text-align: right;
@@ -175,6 +180,7 @@
   width: 40%;
   background: -webkit-linear-gradient(#B8A16F, #FAEBD7);
   font-style: Osaka; 
+  margin-top: 0.25%;
 }
 .user-reference{
   color: #2B426B;
@@ -232,6 +238,7 @@
   color: #FFEE7D;
   font-style: underline;
   background: rgba(166,205,170,0.7);
+  margin-top: 0.3%;
 }
 
 .background {
