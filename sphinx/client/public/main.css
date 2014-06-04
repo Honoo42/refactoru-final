@@ -8,7 +8,7 @@
 }
 .user-display{
 	text-align: right;
-	color: thistle;
+	color: #FFEE7D;
 	font-size: 26px;
 	font-family: fantasy;
 	text-decoration: bold;
@@ -30,11 +30,12 @@
 
 .play {
   /*background-color: #B0C4DE;*/
-  background: -webkit-linear-gradient(#B0C4DE, #00BFFF);
+  background-color: rgba(217,222,225,0.6);
   /*background-image: url(http://media0.giphy.com/media/87tkMovdHMRk4/200.gif);*/
   border-radius: 20px;
   border: gainboro 4px;
   border-style: groove;
+  color: #4676B2;
 
 }
 /*#00BCFF,  */
@@ -47,8 +48,9 @@
   border-style: groove;
 }
 
-.question-area {
-  color: #25277B;
+
+.question-area{
+  color: #4676B2;
 }
 
 .play-area {
@@ -70,10 +72,11 @@
   font-size: 2em;
 }
 .encounter-string{
-  background: -webkit-linear-gradient(#FF584D, #80312C);
+  /*background: -webkit-linear-gradient(#FF584D, #80312C);*/
+  background: -webkit-linear-gradient(#4676B2, #4355AD);
   opacity: .95;
   font-weight: 900;
-  color: black;
+  color: white;
   border-radius: 20% 0% 25% 20%;
   border: gainboro 4px;
   border-style: groove;
@@ -85,21 +88,31 @@
 /*Game Control Buttons*/
 .button-start {
   text-align: center;
-};
+}
 
 .btn {
   z-index: 100;
   /*position: absolute;*/
-};
+}
 
+#startBtn{
+  background: #9DAC97;
+  color: white;
+}
 .character-buttons {
   text-align: center;
-};
+}
 
-#login-name-link{
+.character{
+  background: #4676B2;
+  color: #FFEE7D;
+  border: 1px; 
+  border-style: outset;  
+}
+
+#login-buttons{
   text-align: right;
-  color: firebrick;
-  background-color: thistle;
+  background-color: whitesmoke;
 }
 /*Modal Styling*/
 #adminModal{
@@ -153,7 +166,7 @@
 
 #reveal-chat{
   background: -webkit-linear-gradient(#B8A16F, #FAEBD7);
-  color: black; 
+  color: #4676B2; 
 }
 .chat-container{
   /*border: 2px firebrick solid;*/
@@ -216,9 +229,9 @@
   width: 20%;
   border: 2px;
   border-style: groove;
-  color: #5982AF;
+  color: #FFEE7D;
   font-style: underline;
-  background: -webkit-linear-gradient(#FF584D, #80312C)
+  background: rgba(166,205,170,0.7);
 }
 
 .background {

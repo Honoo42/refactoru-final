@@ -40,29 +40,30 @@ template(name='header')
 				+visitor
 		
 template(name='navbar')
-	ul.nav.nav-pills.list-group
-		li.list-group-item.charModal: a(href="{{pathFor 'charactersModal'}}") Character Info
-		li.list-group-item.monModal: a(href="{{pathFor 'monstersModal'}}") Monsters
-		//- li.list-group-item.locModal: a(href="{{pathFor 'locationModal'}}") Locations
-		li.list-group-item.aboModal: a(href="{{pathFor 'aboutModal'}}") About
-		li.list-group-item.proModal: a(href="{{pathFor 'profileModal'}}") Profile
-		li.list-group-item.adModal: a(href="{{pathFor 'adminModal'}}") Admin Page
-		li.list-group-item.subModal: a(href="{{pathFor 'submitModal'}}") Trivia Insertion
+	.row
+		ul.nav.nav-pills.list-group.col-xs-6.col-xs-offset-3
+			li.list-group-item.charModal: a(href="{{pathFor 'charactersModal'}}") Character Info
+			li.list-group-item.monModal: a(href="{{pathFor 'monstersModal'}}") Monsters
+			//- li.list-group-item.locModal: a(href="{{pathFor 'locationModal'}}") Locations
+			li.list-group-item.aboModal: a(href="{{pathFor 'aboutModal'}}") About
+			li.list-group-item.proModal: a(href="{{pathFor 'profileModal'}}") Profile
+			li.list-group-item.adModal: a(href="{{pathFor 'adminModal'}}") Admin Page
+			li.list-group-item.subModal: a(href="{{pathFor 'submitModal'}}") Trivia Insertion
 
 
 
 template(name='buttons')
 	.button-start
-		button.btn.btn-success.start-game.grow(type='button')  Start Game
+		button.btn.btn-info.start-game.grow#startBtn  Start Game
 		button.btn.btn-warning.generate.buzz(type='button') Start The Level
 		button.btn.btn-reset.btn-danger.reset-game.buzz(type='button') Reset Game Session
 		//- button.btn.test(type='button') TEST
 		//- button.btn.btn-danger.nuke(type='button') Enemy Nuke
 		//- button.btn.btn-danger.self-destruct(type='button') Player Nuke
 		.character-buttons
-			button.btn-info.character.btn-kanir.hover-shadow(type='button') The Knight
-			button.btn-info.character.btn-devaio.hover-shadow(type='button') The Wizard
-			button.btn-info.character.btn-shadow.hover-shadow(type='button') The Rogue
+			button.character.btn-kanir.hover-shadow(type='button') The Knight
+			button.character.btn-devaio.hover-shadow(type='button') The Wizard
+			button.character.btn-shadow.hover-shadow(type='button') The Rogue
 template(name="gameboard")
 	.game-area.row
 		+character_display

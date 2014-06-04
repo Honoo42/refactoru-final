@@ -7,21 +7,20 @@ body
 
 //- Main Chat Window
 template(name="mainBox")
-	.chat-container
+	.chat-container.col-xs-3.col-xs-offset-5
 		h2 Chat with some Friends, #{currentUser.username}
 		+chatBox
 //- Chat box with messages
 template(name="revealChat")
-	button.btn.btn-info#reveal-chat Click to open chat box!!
+	button.btn.btn-info#reveal-chat.col-xs-3.col-xs-offset-5 Click to open chat box!!
 
 template(name="chatBox")
 	#messages
 		+each messages
 			+chatMessage
-	textarea#chat-message
-	br 
-	button.btn.btn-primary#send Send Chat
-	button.btn.btn-warning#close-chat Click to Close Chat
+	textarea#chat-message.col-xs-12
+	button.btn.btn-primary#send.col-xs-6 Send Chat
+	button.btn.btn-warning#close-chat.col-xs-6 Click to Close
 template(name='chatMessage')
 	.user-reference
 		b {{user}}:
@@ -34,7 +33,7 @@ template(name='chatMessage')
 //- 		span.score= score
 
 template(name="leaderboard")
-	.leaderboard-format
+	.leaderboard-format.col-xs-3.col-xs-offset-5
 		h1 Leaderboard
 		each users
 			if status = true
