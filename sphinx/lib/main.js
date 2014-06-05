@@ -905,5 +905,25 @@ if(Meteor.isClient){
 			resetGame();
 		});	
 
+		// Demo day/Debug Function to instantly kill the current monster
+
+	// buttonLayout.on('click','.nuke', function () {
+	// 	console.log('Enemy NUKE');
+	// 	currentMonster.health = 0;
+	// 	highlightWrong();
+	// 	highlightCorrect();
+	// 	_.delay(generateQuestions,2000);
+	// });
+// Demo day/Debug Function to instantly kill the current character
+
+	// buttonLayout.on('click','.self-destruct',function(){
+	// 	console.log('Player NUKED');
+	// 	currentCharacter.job.health = 0;
+	// 	highlightWrong();
+	// 	highlightCorrect();
+	// 	_.delay(generateQuestions,2000);
+	// });
+
+
 	});
 }

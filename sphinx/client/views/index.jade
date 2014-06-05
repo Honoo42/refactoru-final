@@ -33,7 +33,7 @@ template(name='header')
 	header.page-header
 		h1
 			| Welcome to SPHINX
-			small The Trivia RPG Work-In-Progress
+			small The Trivia RPG 
 			if currentUser
 				+currentUser
 			else
@@ -41,7 +41,7 @@ template(name='header')
 		
 template(name='navbar')
 	.row
-		ul.nav.nav-pills.list-group.col-xs-6.col-xs-offset-3
+		ul.nav.nav-pills.list-group.col-xs-10.col-xs-offset-2
 			li.list-group-item.charModal: a(href="{{pathFor 'charactersModal'}}") Character Info
 			li.list-group-item.monModal: a(href="{{pathFor 'monstersModal'}}") Monsters
 			//- li.list-group-item.locModal: a(href="{{pathFor 'locationModal'}}") Locations
@@ -100,18 +100,23 @@ template(name="visitor")
 
 template(name="about")
 	h1 About SPHINX
-		p SPHINX is the ongoing project of RefactorU student Sean Manhertz during his ten weeks at the program
+		p SPHINX is the ongoing project of RefactorU student Sean Manhertz during his ten weeks at the program. It implements Meteor.JS to create a reactive, social experience. 
 	
 template(name="monsters")
 	
 	.game-information
 		button.btn.btn-warning.game-info Close This Field
-		p Goblins Trolls and Ogres oh my
+		h3 Goblins Trolls and Ogres oh my
 template(name="characters")
 	
 	.game-information
 		button.btn.btn-warning.game-info Close This Field
-		p Kanir Devaio Shadow
+		h3 Kanir - Knight 
+			p Chance of blocking incoming damage if the player gets a question wrong  
+		h3 Devaio - Wizard
+			p Uses Intuition to instantly highlight the right answer 
+		h3 Shadow - Rogue
+			p Chance to do double damage when answering a question right
 template(name="locations")
 	
 	.game-information

@@ -99,9 +99,8 @@ if (Meteor.isClient) {
         e.preventDefault();
         $("#aboutModal").modal("show");
         }
-    };
-   
-}
+    }
+};
 
 
 Template.user_profile.helpers({
